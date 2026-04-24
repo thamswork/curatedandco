@@ -1,4 +1,7 @@
 const fs = require('fs');
+const path = require('path');
+
+// Patch dist/server/wrangler.json for Pages
 const p = './dist/server/wrangler.json';
 const cfg = JSON.parse(fs.readFileSync(p));
 const clean = {
