@@ -2,6 +2,7 @@ backend:
   name: github
   repo: thamswork/curatedandco
   branch: main
+  base_url: https://cms-oauth.tyme-sak.workers.dev
 
 media_folder: public/images
 public_folder: /images
