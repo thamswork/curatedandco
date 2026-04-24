@@ -15,7 +15,10 @@ collections:
         label: "Home Page"
         file: "src/content/home.json"
         fields:
-          - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false, hint: "Paste Cloudinary video URL" }
-          - { label: "Hero Image URL", name: "heroImage", widget: "string", required: false, hint: "Paste Cloudinary image URL" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Image URL", name: "heroImage", widget: "string" }
+          - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false }
           - { label: "Brand Story", name: "brandStory", widget: "text" }
-          - { label: "Berwick CTA URL", name: "ctaUrl", widget: "string", default: "https://curatedandcobkk.com/product-category/brands/berwick/" }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string", default: "Shop Now" }
+          - { label: "CTA Button URL", name: "ctaUrl", widget: "string" }
