@@ -1,13 +1,5 @@
 {
-	"compatibility_date": "2026-04-24",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "curatedandco",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
-	}
+  "name": "curatedandco",
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": ["nodejs_compat_v2"]
 }
