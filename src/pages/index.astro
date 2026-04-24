@@ -1,6 +1,10 @@
 ---
 import homeData from '../../public/home.json';
-const { heroImage = '', heroVideo = '', brandStory = '', ctaText = 'Discover All', ctaUrl = '' } = homeData;
+const heroImage = homeData.heroImage || '';
+const heroVideo = homeData.heroVideo || '';
+const brandStory = homeData.brandStory || '';
+const ctaText = homeData.ctaText || 'Discover All';
+const ctaUrl = homeData.ctaUrl || '';
 ---
 <!DOCTYPE html>
 <html lang="en">
