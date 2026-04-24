@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types",
-    "postbuild": "node patch-wrangler.js"
+    "postbuild": "node patch-wrangler.cjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.2.1",
