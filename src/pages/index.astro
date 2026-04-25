@@ -1,5 +1,5 @@
 ---
-const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/q_auto,vc_auto/v1777050102/Landing_-_V_kll7wf.mp4";
+const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/q_auto:best,vc_h264,f_mp4,br_2m/v1777050102/Landing_-_V_kll7wf.mp4";
 const heroImage = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg";
 const heroEyebrow = "Bangkok · Thailand";
 const heroLine1 = "Curated";
@@ -306,6 +306,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     grid-template-columns:repeat(3,1fr);
     gap:32px;
     padding:0 56px;
+    align-items:start;
   }
   .journal-item{
     border-bottom:none;
@@ -315,9 +316,10 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     flex-direction:column;
     border-right:1px solid rgba(0,0,0,.07);
     padding-right:32px;
+    height:100%;
   }
   .journal-item:last-child{border-right:none;padding-right:0}
-  .journal-img-wrap{aspect-ratio:4/3;margin-bottom:20px}
+  .journal-img-wrap{aspect-ratio:4/3;margin-bottom:20px;flex-shrink:0}
   .journal-body{padding:0}
   .journal-title{font-size:18px;font-weight:400;line-height:1.3}
   .journal-excerpt{font-size:11px;-webkit-line-clamp:3}
@@ -406,7 +408,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 <!-- HERO -->
 <div class="hero" id="hero">
   <div class="hero-media">
-    {heroVideo && <video autoplay muted loop playsinline preload="auto" src={heroVideo} style="opacity:0;transition:opacity .6s ease" oncanplay="this.style.opacity=1"></video>}
+    {heroVideo && <video autoplay muted loop playsinline preload="auto" fetchpriority="high" src={heroVideo} style="opacity:0;transition:opacity .5s ease" oncanplay="this.style.opacity=1" onloadeddata="this.style.opacity=1"></video>}
     {!heroVideo && heroImage && <img src={heroImage} alt="Curated & Co."/>}
   </div>
   <div class="hero-overlay"></div>
