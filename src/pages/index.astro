@@ -53,22 +53,54 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* NAV */
-.nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(64px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 20px 0;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease)}
-.nav.h{background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent)}
-.nav.l{background:#fff;border-bottom:1px solid rgba(0,0,0,.07)}
-.nav-logo img{height:38px;width:auto;transition:filter .4s}
+.nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(64px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 20px 0;display:flex;align-items:center;justify-content:space-between;transition:background .5s var(--ease),border-color .5s var(--ease)}
+.nav.h{background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent);border-bottom:1px solid transparent}
+.nav.l{background:#fff;border-bottom:1px solid rgba(0,0,0,.08)}
+.nav-logo img{height:36px;width:auto;transition:filter .4s}
 .nav.h .nav-logo img{filter:brightness(0) invert(1)}
 .nav.l .nav-logo img{filter:none}
-.nav-right{display:flex;align-items:center;gap:16px}
-.nav-shop{font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;display:none}
-.nav.h .nav-shop{color:rgba(255,255,255,.65)}
-.nav.l .nav-shop{color:var(--green)}
-.nav-burger{display:flex;flex-direction:column;gap:5px;align-items:flex-end;justify-content:center;min-width:44px;min-height:44px;cursor:pointer}
-.nav-burger span{display:block;height:1px;transition:background .4s}
-.nav.h .nav-burger span{background:rgba(255,255,255,.75)}
+
+/* Desktop center nav */
+.nav-links{display:none;align-items:center;gap:0;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-links a{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 14px;white-space:nowrap;transition:color .3s}
+.nav.h .nav-links a{color:rgba(255,255,255,.65)}
+.nav.l .nav-links a{color:var(--green)}
+.nav.h .nav-links a:hover{color:#fff}
+.nav.l .nav-links a:hover{color:var(--gold)}
+
+/* Desktop right icons */
+.nav-icons{display:none;align-items:center;gap:16px}
+.nav-icons a{transition:opacity .3s}
+.nav-icons a:hover{opacity:.6}
+.nav-icons svg{width:18px;height:18px}
+.nav.h .nav-icons svg{stroke:#fff;fill:none}
+.nav.l .nav-icons svg{stroke:var(--green);fill:none}
+
+/* Mobile right */
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-burger{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;width:44px;height:44px;cursor:pointer;position:relative;z-index:400}
+.nav-burger span{display:block;width:22px;height:1px;transition:all .4s var(--ease);transform-origin:center}
+.nav-burger span:nth-child(2){width:14px;align-self:flex-end}
+.nav.h .nav-burger span{background:rgba(255,255,255,.8)}
 .nav.l .nav-burger span{background:var(--green)}
-.nav-burger span:first-child{width:22px}
-.nav-burger span:last-child{width:13px}
+.nav-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);background:var(--ink)!important}
+.nav-burger.open span:nth-child(2){opacity:0;width:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background:var(--ink)!important}
+
+/* MOBILE MENU DRAWER */
+.nav-drawer{position:fixed;inset:0;z-index:350;pointer-events:none}
+.nav-drawer-bg{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .4s var(--ease)}
+.nav-drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(320px,85vw);background:#fff;transform:translateX(100%);transition:transform .5s var(--ease);display:flex;flex-direction:column;padding:calc(80px + env(safe-area-inset-top)) 32px 48px;gap:0}
+.nav-drawer.open{pointer-events:all}
+.nav-drawer.open .nav-drawer-bg{opacity:1}
+.nav-drawer.open .nav-drawer-panel{transform:none}
+.drawer-link{display:block;font-size:13px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);padding:16px 0;border-bottom:1px solid rgba(0,0,0,.06);transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-link:last-of-type{border-bottom:none}
+.drawer-icons{display:flex;gap:20px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(0,0,0,.06)}
+.drawer-icons a svg{width:20px;height:20px;stroke:var(--green);fill:none}
+.drawer-logo{margin-top:auto;opacity:.12}
+.drawer-logo img{height:32px}
 
 /* HERO */
 .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0a0a0a}
@@ -233,11 +265,12 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 /* DESKTOP */
 @media(min-width:768px){
-  /* NAV */
-  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:56px;padding-right:56px}
-  .nav-logo img{height:44px}
-  .nav-shop{display:block}
-  .nav-burger{display:none}
+  /* NAV DESKTOP */
+  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px}
+  .nav-logo img{height:40px}
+  .nav-links{display:flex}
+  .nav-icons{display:flex}
+  .nav-right{display:none}
 
   /* HERO */
   .hero-body{padding:0 80px calc(88px + env(safe-area-inset-bottom));max-width:640px}
@@ -317,11 +350,57 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   <a href="https://curatedandcobkk.com" class="nav-logo">
     <img src={logo} alt="Curated & Co."/>
   </a>
+  <!-- Desktop center links -->
+  <div class="nav-links">
+    <a href="https://curatedandcobkk.com/product-category/brands/">Brands</a>
+    <a href="https://curatedandcobkk.com/shop/">Shop</a>
+    <a href="https://curatedandcobkk.com/product-category/accessories/">Accessories</a>
+    <a href="https://curatedandcobkk.com/blog/">Journal</a>
+    <a href="https://curatedandcobkk.com/#looks">Looks</a>
+    <a href="https://curatedandcobkk.com/#store">Store</a>
+  </div>
+  <!-- Desktop right icons -->
+  <div class="nav-icons">
+    <a href="https://curatedandcobkk.com/?s=" aria-label="Search">
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+    </a>
+    <a href="https://curatedandcobkk.com/cart/" aria-label="Cart">
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    </a>
+    <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+    </a>
+  </div>
+  <!-- Mobile right -->
   <div class="nav-right">
-    <a href="https://curatedandcobkk.com" class="nav-shop">Shop All</a>
-    <div class="nav-burger"><span></span><span></span></div>
+    <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="drawer">
+  <div class="nav-drawer-bg" id="drawerBg"></div>
+  <div class="nav-drawer-panel">
+    <a href="https://curatedandcobkk.com/product-category/brands/" class="drawer-link">Brands</a>
+    <a href="https://curatedandcobkk.com/shop/" class="drawer-link">Shop</a>
+    <a href="https://curatedandcobkk.com/product-category/accessories/" class="drawer-link">Accessories</a>
+    <a href="https://curatedandcobkk.com/blog/" class="drawer-link">Journal</a>
+    <a href="https://curatedandcobkk.com/#looks" class="drawer-link">Looks</a>
+    <a href="https://curatedandcobkk.com/#store" class="drawer-link">Store</a>
+    <div class="drawer-icons">
+      <a href="https://curatedandcobkk.com/?s=" aria-label="Search">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="#0D2B1F" fill="none"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+      </a>
+      <a href="https://curatedandcobkk.com/cart/" aria-label="Cart">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="#0D2B1F" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </a>
+      <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="#0D2B1F" fill="none"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#0D2B1F"/></svg>
+      </a>
+    </div>
+    <div class="drawer-logo"><img src={logo} alt="Curated & Co."/></div>
+  </div>
+</div>
 
 <!-- HERO -->
 <div class="hero" id="hero">
@@ -529,10 +608,19 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 </footer>
 
 <script>
-// Nav
+// Nav scroll
 const nav=document.getElementById('nav');
 const heroEl=document.getElementById('hero');
 window.addEventListener('scroll',()=>{nav.className=window.scrollY<heroEl.offsetHeight-70?'nav h':'nav l'},{passive:true});
+
+// Mobile drawer
+const burger=document.getElementById('burger');
+const drawer=document.getElementById('drawer');
+const drawerBg=document.getElementById('drawerBg');
+function openDrawer(){burger.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden'}
+function closeDrawer(){burger.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}
+burger.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer());
+drawerBg.addEventListener('click',closeDrawer);
 
 // Cat cards animate
 const catObs=new IntersectionObserver(e=>{
