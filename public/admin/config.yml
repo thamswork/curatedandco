@@ -15,33 +15,37 @@ collections:
         label: "Home Page"
         file: "public/home.json"
         fields:
+
           - label: "Hero"
             name: "hero"
             widget: "object"
+            collapsed: false
             fields:
-              - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false }
-              - { label: "Hero Image (fallback)", name: "heroImage", widget: "image", required: false }
+              - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false, hint: "Paste Cloudinary video URL" }
+              - { label: "Hero Image (shown if no video)", name: "heroImage", widget: "image", required: false }
               - { label: "Eyebrow Text", name: "heroEyebrow", widget: "string", default: "Bangkok · Thailand" }
               - { label: "Title Line 1", name: "heroLine1", widget: "string", default: "Curated" }
-              - { label: "Title Line 2 italic", name: "heroLine2", widget: "string", default: "& Co." }
+              - { label: "Title Line 2 (italic)", name: "heroLine2", widget: "string", default: "& Co." }
               - { label: "Subtitle", name: "heroSub", widget: "string" }
-              - { label: "CTA Text", name: "heroCta", widget: "string", default: "Discover All" }
-              - { label: "CTA URL", name: "heroCtaUrl", widget: "string" }
+              - { label: "Button Text", name: "heroCta", widget: "string", default: "Discover All" }
+              - { label: "Button URL", name: "heroCtaUrl", widget: "string" }
 
-          - label: "Category 1 - Welted Loafers"
+          - label: "Category 1 — Welted Loafers"
             name: "cat1"
             widget: "object"
+            collapsed: true
             fields:
-              - { label: "Background Photo", name: "photo", widget: "image", required: false }
+              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Full-bleed background photo for this card" }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Welted" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Loafers" }
               - { label: "Description", name: "desc", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
 
-          - label: "Category 2 - Oxford Shoes"
+          - label: "Category 2 — Oxford Shoes"
             name: "cat2"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Background Photo", name: "photo", widget: "image", required: false }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
@@ -50,9 +54,10 @@ collections:
               - { label: "Description", name: "desc", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
 
-          - label: "Category 3 - Flex Walks"
+          - label: "Category 3 — Flex Walks"
             name: "cat3"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Background Photo", name: "photo", widget: "image", required: false }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
@@ -61,52 +66,60 @@ collections:
               - { label: "Description", name: "desc", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
 
-          - label: "Our Favorites Products"
+          - label: "Our Favorites — Products"
             name: "products"
             widget: "list"
+            collapsed: true
             max: 12
+            hint: "Add up to 12 products. Upload photo, fill in details and link."
             fields:
-              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Product Photo", name: "photo", widget: "image", required: false }
               - { label: "Brand", name: "brand", widget: "string", default: "Berwick 1707" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Note", name: "note", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string" }
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Note", name: "note", widget: "string", hint: "e.g. Goodyear welted · Last 8" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g. ฿8,800" }
+              - { label: "Product URL", name: "url", widget: "string" }
 
-          - label: "LOOKS Photos"
+          - label: "LOOKS — Editorial Photos"
             name: "looks"
             widget: "list"
+            collapsed: true
             max: 20
+            hint: "Add as many editorial/lifestyle photos as you want. They display as a horizontal scroll."
             fields:
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
               - { label: "Link URL (optional)", name: "url", widget: "string", required: false }
 
-          - label: "Journal Posts"
+          - label: "Journal — Blog Posts"
             name: "journal"
             widget: "list"
+            collapsed: true
             max: 6
+            hint: "Add up to 6 journal posts. Each links to a blog post URL."
             fields:
               - { label: "Cover Photo", name: "photo", widget: "image", required: false }
               - { label: "Category Tag", name: "tag", widget: "string", default: "Journal" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Excerpt", name: "excerpt", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/blog/" }
+              - { label: "Post URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/blog/" }
 
           - label: "Our Favourite Section"
             name: "favourite"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Eyebrow", name: "eyebrow", widget: "string", default: "Our Favourite" }
               - { label: "Heading Line 1", name: "heading1", widget: "string", default: "Made to Last" }
-              - { label: "Heading Line 2 italic", name: "heading2", widget: "string", default: "a Lifetime" }
+              - { label: "Heading Line 2 (italic)", name: "heading2", widget: "string", default: "a Lifetime" }
               - { label: "Body Text", name: "body", widget: "text" }
 
           - label: "Visit Us"
             name: "visit"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Address", name: "address", widget: "string", default: "Emporium 1F, Bangkok." }
-              - { label: "Hours and Phone", name: "hours", widget: "string" }
-              - { label: "LINE URL", name: "lineUrl", widget: "string" }
-              - { label: "Google Maps URL", name: "mapsUrl", widget: "string", default: "https://maps.google.com/?q=Emporium+Bangkok" }
+              - { label: "Hours & Phone", name: "hours", widget: "string", default: "Daily 10:00 – 21:00 · 098-356-8388" }
+              - { label: "LINE URL", name: "lineUrl", widget: "string", default: "https://line.me/ti/p/curatedandcobkk" }
+              - { label: "Google Maps URL", name: "mapsUrl", widget: "string" }
