@@ -5,317 +5,871 @@ const brandStory = "Berwick 1707 represents the pinnacle of Spanish shoemaking t
 const ctaText = "Shop the Collection";
 const ctaUrl = "https://curatedandcobkk.com/product-category/brands/berwick/";
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-<title>Curated & Co. Bangkok</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-a{color:inherit;text-decoration:none}
-:root{
---green:#0D2B1F;--gold:#B8924A;--gold2:#CFA55A;
---cream:#F7F4EF;--page:#FAFAF8;--ink:#111;--mid:#5A5A58;
---ease:cubic-bezier(0.16,1,0.3,1);
---fd:'Cormorant Garamond',Georgia,serif;
---fb:'Jost',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-.nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(60px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 20px 0;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease)}
-.nav.h{background:linear-gradient(to bottom,rgba(13,43,31,.85),transparent)}
-.nav.l{background:var(--page);border-bottom:1px solid rgba(17,17,17,.07)}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-c{width:32px;height:32px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:14px;font-weight:300;transition:color .4s}
-.nav-wm{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;transition:color .4s}
-.nav.h .nav-c,.nav.h .nav-wm{color:#fff}
-.nav.l .nav-c,.nav.l .nav-wm{color:var(--green)}
-.nav-burger{display:flex;flex-direction:column;gap:5px;align-items:flex-end;justify-content:center;min-width:48px;min-height:48px;padding-left:12px;cursor:pointer}
-.nav-burger span{display:block;height:1px;transition:background .4s}
-.nav.h .nav-burger span{background:#fff}
-.nav.l .nav-burger span{background:var(--green)}
-.nav-burger span:first-child{width:24px}
-.nav-burger span:last-child{width:14px}
-.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--green)}
-.slides{display:flex;height:100%;transition:transform .9s var(--ease);will-change:transform}
-.slide{flex-shrink:0;width:100%;height:100%;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 72px}.slide .sbody{position:relative;z-index:3}.slide .sacc{z-index:3}
-.s0{background:#000}.s0 video,.s0 img{opacity:1!important;z-index:1!important}
-.s1{background:linear-gradient(155deg,#091E15,#0B2519 60%,#0E2B1E)}
-.s2{background:linear-gradient(165deg,#0B2018,#0D271C 60%,#102A20)}
-.s3{background:linear-gradient(150deg,#0A1F17,#0C2419 60%,#0F291D)}
-.sacc{position:absolute;top:0;left:28px;right:28px;height:1px;background:linear-gradient(to right,transparent,rgba(184,146,74,.4),transparent);z-index:2}
-.sart{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:1}
-.sart svg{width:78%;max-width:340px;opacity:.08;animation:af 18s ease-in-out infinite alternate}
-@keyframes af{from{transform:scale(1)}to{transform:scale(1.05) translateY(-14px)}}
-.sbody{position:relative;z-index:3}
-.sorg{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(184,146,74,.7);margin-bottom:18px}
-.sbrand{font-family:var(--fd);font-size:clamp(54px,16vw,88px);font-weight:300;color:#fff;line-height:.9;margin-bottom:6px}
-.ssub{font-family:var(--fd);font-size:clamp(16px,4.5vw,22px);font-weight:300;font-style:italic;color:rgba(184,146,74,.85);letter-spacing:.15em;margin-bottom:20px}
-.sdesc{font-size:12px;color:rgba(255,255,255,.42);letter-spacing:.05em;line-height:1.7;margin-bottom:36px;max-width:280px}
-.sbtn{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(184,146,74,.5);color:rgba(184,146,74,.9);font-family:var(--fb);font-size:9px;font-weight:400;letter-spacing:.38em;text-transform:uppercase;padding:14px 30px;min-height:48px;transition:background .3s,color .3s}
-@media(hover:hover){.sbtn:hover{background:var(--gold);color:#fff}}
-.slide.on .sorg,.slide.on .sbrand,.slide.on .ssub,.slide.on .sdesc,.slide.on .sbtn{animation:su .7s var(--ease) both}
-.slide.on .sbrand{animation-delay:.1s}.slide.on .ssub{animation-delay:.22s}.slide.on .sdesc{animation-delay:.32s}.slide.on .sbtn{animation-delay:.42s}
-@keyframes su{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero-dots{position:absolute;bottom:28px;right:24px;display:flex;flex-direction:column;gap:8px;z-index:10}
-.dot{width:1px;height:20px;background:rgba(255,255,255,.22);border:none;cursor:pointer;padding:0;transition:background .3s,height .3s}
-.dot.on{background:var(--gold);height:32px}
-.bstrip{background:var(--green);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
-.bstrip-lbl{font-size:8px;letter-spacing:.45em;text-transform:uppercase;color:rgba(255,255,255,.3)}
-.bstrip-list{display:flex;gap:18px;align-items:center}
-.bstrip-list a{font-family:var(--fd);font-size:13px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .2s}
-.bstrip-list a.on{color:var(--gold)}
-.bstrip-sep{color:rgba(255,255,255,.12);font-size:10px}
-.col{background:var(--page);padding:64px 0 72px}
-.sec-hd{padding:0 24px;margin-bottom:40px}
-.sec-ey{display:block;font-size:8px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.sec-h2{font-family:var(--fd);font-size:clamp(34px,9vw,48px);font-weight:300;color:var(--ink);line-height:1.05}
-.sec-h2 em{color:var(--green);font-style:italic}
-.bblock{margin-bottom:52px}
-.bblock:last-child{margin-bottom:0}
-.brow-hd{display:flex;align-items:center;gap:14px;padding:0 24px;margin-bottom:20px}
-.brow-name{font-family:var(--fd);font-size:18px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
-.brow-rule{flex:1;height:1px;background:rgba(17,17,17,.08)}
-.brow-link{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--green);white-space:nowrap;display:flex;align-items:center;gap:6px}
-.brow-link::after{content:'';width:18px;height:1px;background:var(--green);display:block;transition:width .3s}
-.card-row{display:flex;gap:10px;overflow-x:auto;padding:0 24px 2px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.card-row::-webkit-scrollbar{display:none}
-.pcard{flex-shrink:0;width:58vw;max-width:200px;scroll-snap-align:start}
-.pcard-img{width:100%;aspect-ratio:3/4;position:relative;overflow:hidden;margin-bottom:12px}
-.ph{width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center}
-.g1{background:var(--green)}.g2{background:#0B2419}.g3{background:#102C20}
-.g4{background:#091E15}.g5{background:#0E2820}.g6{background:#0C2218}
-.g7{background:#0A1F17}.g8{background:#0D2620}.g9{background:#112B1E}
-.ph svg{width:72%;opacity:.18;position:relative;z-index:1}
-.ph-tag{position:absolute;bottom:10px;left:10px;font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:rgba(184,146,74,.6);z-index:2}
-.ph-badge{position:absolute;top:8px;right:8px;background:var(--gold);color:#fff;font-size:7px;letter-spacing:.18em;text-transform:uppercase;padding:3px 7px;z-index:3}
-.pcard-brand{font-size:7px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-.pcard-name{font-family:var(--fd);font-size:16px;font-weight:300;color:var(--ink);line-height:1.2;margin-bottom:5px}
-.pcard-note{font-size:10px;color:var(--mid);line-height:1.5;margin-bottom:8px}
-.pcard-price{font-family:var(--fd);font-size:15px;font-weight:400;color:var(--ink)}
-.phil{background:var(--green);padding:72px 24px;position:relative;overflow:hidden}
-.phil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(184,146,74,.07),transparent 70%);pointer-events:none}
-.phil .sec-ey{color:rgba(184,146,74,.6)}
-.phil .sec-h2{color:#fff}
-.phil .sec-h2 em{color:var(--gold2);font-style:italic}
-.phil-body{font-family:var(--fd);font-style:italic;font-size:17px;line-height:2;color:rgba(255,255,255,.48);margin:28px 0 48px}
-.phil-rows{border-top:1px solid rgba(255,255,255,.08)}
-.prow{display:grid;grid-template-columns:36px 1fr;gap:0 16px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);opacity:0;transform:translateX(-10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.prow.in{opacity:1;transform:none}
-.pn{font-family:var(--fd);font-size:28px;font-weight:300;color:rgba(184,146,74,.35);line-height:1;padding-top:4px}
-.prow h4{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:7px}
-.prow p{font-size:13px;line-height:1.8;color:rgba(255,255,255,.35)}
-.looks{background:var(--cream);padding:64px 0}
-.looks .sec-h2 em{color:var(--green)}
-.looks .sec-ey{color:var(--green)}
-.looks-reel{display:flex;gap:2px;overflow-x:auto;padding:0 24px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.looks-reel::-webkit-scrollbar{display:none}
-.lcard{flex-shrink:0;width:66vw;max-width:240px;aspect-ratio:3/4;scroll-snap-align:start;overflow:hidden;position:relative}
-.lph{width:100%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:18px;position:relative}
-.lph::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,43,31,.92) 0%,rgba(13,43,31,.2) 55%,transparent 100%);z-index:1}
-.lp1{background:#0D2B1F}.lp2{background:#0B2419}.lp3{background:#102C20}.lp4{background:#0A2018}
-.lph svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:74%;opacity:.14}
-.llbl{position:relative;z-index:2}
-.llbl span{display:block;font-size:7px;letter-spacing:.4em;text-transform:uppercase;color:rgba(184,146,74,.7)}
-.llbl strong{display:block;font-family:var(--fd);font-size:20px;font-weight:300;color:#fff;margin-top:3px}
-.looks-ig{display:flex;align-items:center;gap:12px;padding:26px 24px 0}
-.looks-ig span{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--green)}
-.ig-dash{width:40px;height:1px;background:var(--green);flex-shrink:0}
-.cta{background:var(--page);padding:80px 24px;border-top:1px solid rgba(17,17,17,.06)}
-.cta h2{font-family:var(--fd);font-size:clamp(36px,10vw,52px);font-weight:300;color:var(--ink);line-height:1.1}
-.cta h2 em{color:var(--green);font-style:italic}
-.cta-sub{font-family:var(--fd);font-style:italic;font-size:15px;color:var(--mid);line-height:1.8;margin:16px 0 40px}
-.cta-btns{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.btn-g{display:inline-flex;align-items:center;gap:12px;background:#06C755;color:#fff;font-family:var(--fb);font-size:9px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;padding:17px 36px;min-height:52px;transition:opacity .25s}
-.btn-p{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--fb);font-size:9px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;padding:17px 36px;min-height:52px;transition:opacity .25s}
-@media(hover:hover){.btn-g:hover,.btn-p:hover{opacity:.85}}
-.lico{width:18px;height:18px;flex-shrink:0}
-footer{background:var(--green);padding:52px 24px calc(44px + env(safe-area-inset-bottom))}
-.ft{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
-.fc{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:16px;font-weight:300;color:#fff;margin-bottom:8px}
-.fw{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#fff}
-.ftg{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:2px}
-.fa{text-align:right}
-.fa p{font-size:10px;color:rgba(255,255,255,.35);line-height:1.9}
-.fa strong{color:rgba(255,255,255,.65);font-weight:400}
-.fb2{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px}
-.fb2 a{font-family:var(--fd);font-size:12px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);transition:color .2s}
-.fn{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px}
-.fn a{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.22);transition:color .2s}
-.fcp{font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.14)}
-.fv{font-size:7px;color:rgba(184,146,74,.18);margin-top:5px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Berwick 1707 — Handcrafted Spanish shoes, exclusively curated for Bangkok by Curated & Co." />
+  <title>Berwick 1707 — Curated & Co. Bangkok</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --parchment: #EDE5D4;
+      --tan: #C9A96E;
+      --tan-dark: #A07C3E;
+      --brown: #3D2B1F;
+      --brown-mid: #6B4226;
+      --brown-light: #8B5E3C;
+      --charcoal: #1A1208;
+      --white: #FDFAF5;
+      --gold: #C9A96E;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Tenor Sans', sans-serif;
+      --font-italic: 'EB Garamond', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVBAR ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      padding-top: calc(20px + env(safe-area-inset-top));
+      background: linear-gradient(to bottom, rgba(26,18,8,0.9) 0%, transparent 100%);
+      transition: background 0.4s ease;
+    }
+    .nav.scrolled {
+      background: rgba(26,18,8,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--cream);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-logo span {
+      color: var(--gold);
+    }
+    .nav-line {
+      width: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .nav-line span {
+      display: block;
+      height: 1px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+    .nav-line span:first-child { width: 28px; }
+    .nav-line span:last-child { width: 18px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding-bottom: 72px;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform-origin: center;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26,18,8,0.15) 0%,
+        rgba(26,18,8,0.1) 30%,
+        rgba(26,18,8,0.55) 65%,
+        rgba(26,18,8,0.92) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 32px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 1.2s ease 0.4s forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 14vw, 80px);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.9s forwards;
+    }
+
+    .hero-sub {
+      font-family: var(--font-italic);
+      font-style: italic;
+      font-size: clamp(14px, 3.5vw, 18px);
+      color: var(--parchment);
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.1s forwards;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 16px 40px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.3s forwards;
+    }
+    @media (hover: hover) {
+      .hero-cta:hover {
+        background: var(--gold);
+        color: var(--charcoal);
+      }
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.8s forwards;
+    }
+    .hero-scroll span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--tan);
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--tan), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--tan);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 25s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      padding: 0 28px;
+      white-space: nowrap;
+    }
+    .marquee-dot {
+      color: var(--brown);
+      padding: 0 4px;
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 80px 24px;
+    }
+    .section-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.45em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 9vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--tan);
+    }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--tan);
+      margin: 24px 0;
+    }
+
+    /* ── COLLECTION ── */
+    .collection {
+      background: var(--charcoal);
+      padding-top: 64px;
+    }
+    .collection-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .collection-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .collection-card {
+      position: relative;
+      height: 56vw;
+      max-height: 320px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .collection-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+      filter: brightness(0.75) saturate(0.9);
+    }
+    @media (hover: hover) {
+      .collection-card:hover img { transform: scale(1.05); }
+    }
+    .collection-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,18,8,0.85) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px 20px;
+    }
+    .collection-card-label {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .collection-card-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+    .collection-card-arrow {
+      margin-top: 12px;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      position: relative;
+    }
+    .collection-card-arrow::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -3px;
+      width: 7px; height: 7px;
+      border-top: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
+      transform: rotate(45deg);
+    }
+
+    /* ── CRAFTSMANSHIP ── */
+    .craft {
+      background: var(--brown);
+      position: relative;
+      overflow: hidden;
+    }
+    .craft::before {
+      content: '1707';
+      position: absolute;
+      right: -20px; top: 40px;
+      font-family: var(--font-display);
+      font-size: 120px;
+      font-weight: 300;
+      color: rgba(201,169,110,0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .craft-body {
+      font-family: var(--font-italic);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.9;
+      color: var(--parchment);
+      margin-bottom: 40px;
+    }
+    .craft-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .craft-pillar {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s ease;
+    }
+    .craft-pillar.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .craft-pillar-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--tan);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 40px;
+    }
+    .craft-pillar-text h4 {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .craft-pillar-text p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(237,229,212,0.7);
+    }
+
+    /* ── LOOKS / INSTAGRAM ── */
+    .looks {
+      background: var(--cream);
+      color: var(--charcoal);
+      padding: 64px 0;
+    }
+    .looks-header {
+      padding: 0 24px;
+      margin-bottom: 32px;
+    }
+    .looks .section-title { color: var(--charcoal); }
+    .looks .section-eyebrow { color: var(--brown-mid); }
+    .looks-scroll {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      padding: 0 24px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .looks-scroll::-webkit-scrollbar { display: none; }
+    .looks-item {
+      flex-shrink: 0;
+      width: 72vw;
+      max-width: 280px;
+      aspect-ratio: 3/4;
+      scroll-snap-align: start;
+      overflow: hidden;
+      position: relative;
+      background: var(--parchment);
+    }
+    .looks-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .looks-item-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--parchment) 0%, var(--tan) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .looks-item-placeholder span {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--brown);
+      text-transform: uppercase;
+    }
+    .looks-insta-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 32px 24px 0;
+      text-decoration: none;
+      color: var(--brown);
+    }
+    .looks-insta-cta span {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    .looks-insta-cta .arrow-line {
+      flex: 1;
+      height: 1px;
+      background: var(--tan);
+      position: relative;
+      max-width: 60px;
+    }
+    .looks-insta-cta .arrow-line::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -3px;
+      width: 6px; height: 6px;
+      border-top: 1px solid var(--brown-mid);
+      border-right: 1px solid var(--brown-mid);
+      transform: rotate(45deg);
+    }
+
+    /* ── LINE CTA ── */
+    .line-cta {
+      background: var(--charcoal);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .line-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,169,110,0.08) 0%, transparent 70%);
+    }
+    .line-cta-inner { position: relative; z-index: 1; }
+    .line-cta .section-title { margin-bottom: 12px; }
+    .line-cta-sub {
+      font-family: var(--font-italic);
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(237,229,212,0.6);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .line-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #06C755;
+      color: #fff;
+      padding: 18px 36px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      min-height: 56px;
+      transition: opacity 0.2s;
+    }
+    @media (hover: hover) { .line-btn:hover { opacity: 0.85; } }
+    .line-icon { width: 22px; height: 22px; }
+
+    .shop-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 18px 36px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      min-height: 56px;
+      margin-top: 16px;
+      transition: all 0.3s;
+    }
+    @media (hover: hover) {
+      .shop-btn:hover { background: var(--gold); color: var(--charcoal); }
+    }
+    .cta-btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown);
+      padding: 48px 24px;
+      padding-bottom: calc(48px + env(safe-area-inset-bottom));
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .footer-sub {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--tan);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .footer-links a {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(237,229,212,0.5);
+      text-decoration: none;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: rgba(237,229,212,0.3);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
 </head>
+
 <body>
-<nav class="nav h" id="nav">
-  <div class="nav-logo"><div class="nav-c">C</div><div class="nav-wm">Curated & Co.</div></div>
-  <div class="nav-burger"><span></span><span></span></div>
-</nav>
-<div class="hero" id="hero">
-  <div class="slides" id="slides">
-    <div class="slide s0 on">
-      <div class="sacc"></div>
-      {heroVideo && <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1" autoplay muted loop playsinline src={heroVideo}></video>}
-      {!heroVideo && heroImage && <img style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1" src={heroImage} alt="Hero"/>}
-      <div class="sart" aria-hidden="true"><svg viewBox="0 0 400 400" fill="none"><circle cx="200" cy="200" r="140" stroke="#C9A96E" stroke-width="1" opacity="0.6"/><circle cx="200" cy="200" r="100" stroke="#C9A96E" stroke-width="0.5" opacity="0.3"/><path d="M200 60 A140 140 0 0 0 60 200" stroke="#C9A96E" stroke-width="2" opacity="0.4"/></svg></div>
-      <div class="sbody">
-        <div class="sorg">Bangkok · Thailand</div>
-        <div class="sbrand">Curated<br/><em style="font-style:italic;color:rgba(184,146,74,.85)">&amp; Co.</em></div>
-        <div class="sdesc">A curated edit of Europe's finest shoemaking — for those who know.</div>
-        <a href="https://curatedandcobkk.com" class="sbtn">Discover All</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">Curated <span>&</span> Co.</a>
+    <a href="https://curatedandcobkk.com" class="nav-logo" style="font-size:9px;letter-spacing:0.3em;color:var(--tan)">BERWICK 1707</a>
+    <div class="nav-line" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    {heroVideo ? (
+      <video class="hero-video" autoplay muted loop playsinline poster={heroImage || ''}>
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+    ) : heroImage ? (
+      <img class="hero-media" src={heroImage} alt="Berwick 1707" />
+    ) : (
+      <!-- Fallback gradient when no media uploaded yet -->
+      <div style="position:absolute;inset:0;background:linear-gradient(160deg,#3D2B1F 0%,#1A1208 40%,#6B4226 100%);"></div>
+    )}
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Curated & Co. Bangkok — Official Berwick Retailer</p>
+      <h1 class="hero-title">Berwick<br/>1707</h1>
+      <p class="hero-sub">Handcrafted in Almansa, Spain since 1707</p>
+      <a href={ctaUrl} class="hero-cta">{ctaText}</a>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      {[...Array(2)].map(() => (
+        <>
+          <span class="marquee-item">Goodyear Welted</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Almansa, Spain</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Since 1707</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Shell Cordovan</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Box Calf</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Handcrafted</span>
+          <span class="marquee-item marquee-dot">·</span>
+          <span class="marquee-item">Bangkok Exclusive</span>
+          <span class="marquee-item marquee-dot">·</span>
+        </>
+      ))}
+    </div>
+  </div>
+
+  <!-- COLLECTION -->
+  <section class="collection">
+    <div class="collection-header reveal">
+      <span class="section-eyebrow">The Collection</span>
+      <h2 class="section-title">Berwick <em>for</em><br/>Bangkok</h2>
+    </div>
+
+    <div class="collection-grid">
+      <a href="https://curatedandcobkk.com/product-category/shoes/penny-loafer/" class="collection-card reveal reveal-delay-1">
+        <img src="https://via.placeholder.com/800x450/3D2B1F/C9A96E?text=Penny+Loafer" alt="Penny Loafer" loading="lazy" />
+        <div class="collection-card-overlay">
+          <span class="collection-card-label">Berwick 1707</span>
+          <div class="collection-card-name">Penny<br/>Loafer</div>
+          <div class="collection-card-arrow"></div>
+        </div>
+      </a>
+
+      <a href="https://curatedandcobkk.com/product-category/shoes/horsebit-loafer/" class="collection-card reveal reveal-delay-2">
+        <img src="https://via.placeholder.com/800x450/6B4226/C9A96E?text=Horsebit+Loafer" alt="Horsebit Loafer" loading="lazy" />
+        <div class="collection-card-overlay">
+          <span class="collection-card-label">Berwick 1707</span>
+          <div class="collection-card-name">Horsebit<br/>Loafer</div>
+          <div class="collection-card-arrow"></div>
+        </div>
+      </a>
+
+      <a href="https://curatedandcobkk.com/product-category/shoes/oxford/" class="collection-card reveal reveal-delay-3">
+        <img src="https://via.placeholder.com/800x450/1A1208/C9A96E?text=Oxford" alt="Oxford" loading="lazy" />
+        <div class="collection-card-overlay">
+          <span class="collection-card-label">Berwick 1707</span>
+          <div class="collection-card-name">Oxford</div>
+          <div class="collection-card-arrow"></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CRAFTSMANSHIP -->
+  <section class="craft">
+    <span class="section-eyebrow reveal">The Craft</span>
+    <h2 class="section-title reveal">An Art<br/><em>Three Centuries</em><br/>in the Making</h2>
+    <div class="divider reveal"></div>
+    <p class="craft-body reveal">{brandStory}</p>
+
+    <div class="craft-pillars">
+      <div class="craft-pillar">
+        <div class="craft-pillar-num">01</div>
+        <div class="craft-pillar-text">
+          <h4>Goodyear Welt</h4>
+          <p>The most durable construction in shoemaking. A raised welt stitched to the upper and insole creates a shoe resoleable for life.</p>
+        </div>
+      </div>
+      <div class="craft-pillar">
+        <div class="craft-pillar-num">02</div>
+        <div class="craft-pillar-text">
+          <h4>Finest Leathers</h4>
+          <p>Box calf, shell cordovan, suede and deerskin — each hide hand-selected for grain, temper, and patina potential.</p>
+        </div>
+      </div>
+      <div class="craft-pillar">
+        <div class="craft-pillar-num">03</div>
+        <div class="craft-pillar-text">
+          <h4>Almansa Atelier</h4>
+          <p>Every pair shaped by master craftsmen on the Berwick artisan floor in Almansa — Spain's historic shoemaking capital.</p>
+        </div>
       </div>
     </div>
-    <div class="slide s1">
-      <div class="sacc"></div>
-      <div class="sart" aria-hidden="true"><svg viewBox="0 0 560 280" fill="none"><path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/><rect x="224" y="80" width="112" height="24" rx="6" fill="#C9A96E" opacity="0.55"/></svg></div>
-      <div class="sbody">
-        <div class="sorg">Almansa · Spain</div>
-        <div class="sbrand">Berwick</div>
-        <div class="ssub">1707</div>
-        <div class="sdesc">Goodyear welted. Shell cordovan. Box calf. Handcrafted since 1707.</div>
-        <a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="sbtn">Shop Berwick</a>
+  </section>
+
+  <!-- LOOKS / INSTAGRAM -->
+  <section class="looks">
+    <div class="looks-header">
+      <span class="section-eyebrow reveal">Looks & Style</span>
+      <h2 class="section-title reveal">Wear It<br/><em>Your Way</em></h2>
+    </div>
+    <div class="looks-scroll">
+      {[1,2,3,4].map((i) => (
+        <div class="looks-item">
+          <div class="looks-item-placeholder">
+            <span>Look {i}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <a href="https://www.instagram.com/curatedandcobkk/" class="looks-insta-cta" target="_blank" rel="noopener">
+      <span>View on Instagram</span>
+      <div class="arrow-line"></div>
+    </a>
+  </section>
+
+  <!-- LINE CTA -->
+  <section class="line-cta">
+    <div class="line-cta-inner">
+      <span class="section-eyebrow reveal">Personal Shopping</span>
+      <h2 class="section-title reveal">Ready to<br/><em>Find Your Pair?</em></h2>
+      <p class="line-cta-sub reveal">Our specialists are ready to guide you through the collection,<br/>sizing, and leather selection — personally.</p>
+      <div class="cta-btns reveal">
+        <a href="https://line.me/ti/p/curatedandcobkk" class="line-btn" target="_blank" rel="noopener">
+          <svg class="line-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          Chat & Shop Now
+        </a>
+        <a href={ctaUrl} class="shop-btn">
+          Browse Full Collection
+        </a>
       </div>
     </div>
-    <div class="slide s2">
-      <div class="sacc"></div>
-      <div class="sart" aria-hidden="true"><svg viewBox="0 0 560 280" fill="none"><path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/><path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="6" stroke-linecap="round" fill="none"/></svg></div>
-      <div class="sbody">
-        <div class="sorg">Mallorca · Spain</div>
-        <div class="sbrand">Carmina</div>
-        <div class="ssub">Shoemaker</div>
-        <div class="sdesc">Family-crafted since 1958. Ready-to-wear and made-to-order.</div>
-        <a href="https://curatedandcobkk.com/product-category/brands/carmina/" class="sbtn">Shop Carmina</a>
-      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Curated & Co.</div>
+    <div class="footer-sub">Official Berwick 1707 Retailer — Bangkok</div>
+    <div class="footer-links">
+      <a href="https://curatedandcobkk.com">Shop</a>
+      <a href="https://curatedandcobkk.com/product-category/brands/berwick/">Berwick</a>
+      <a href="https://www.instagram.com/curatedandcobkk/">Instagram</a>
+      <a href="https://line.me/ti/p/curatedandcobkk">LINE</a>
     </div>
-    <div class="slide s3">
-      <div class="sacc"></div>
-      <div class="sart" aria-hidden="true"><svg viewBox="0 0 560 280" fill="none"><path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/><path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/></svg></div>
-      <div class="sbody">
-        <div class="sorg">Romans-sur-Isere · France</div>
-        <div class="sbrand">Paraboot</div>
-        <div class="ssub">Since 1908</div>
-        <div class="sdesc">Norwegian welt. Made in France. Built to last decades.</div>
-        <a href="https://curatedandcobkk.com/product-category/brands/paraboot/" class="sbtn">Shop Paraboot</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-dots" id="dots">
-    <button class="dot on" data-i="0"></button>
-    <button class="dot" data-i="1"></button>
-    <button class="dot" data-i="2"></button>
-    <button class="dot" data-i="3"></button>
-  </div>
-</div>
-<div class="bstrip">
-  <div class="bstrip-lbl">Our Brands</div>
-  <div class="bstrip-list">
-    <a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="on">Berwick</a>
-    <span class="bstrip-sep">·</span>
-    <a href="https://curatedandcobkk.com/product-category/brands/carmina/">Carmina</a>
-    <span class="bstrip-sep">·</span>
-    <a href="https://curatedandcobkk.com/product-category/brands/paraboot/">Paraboot</a>
-  </div>
-</div>
-<section class="col">
-  <div class="sec-hd"><span class="sec-ey rv">The Edit</span><h2 class="sec-h2 rv d1">Selected<br/><em>for Bangkok</em></h2></div>
-  <div class="bblock rv d1">
-    <div class="brow-hd"><div class="brow-name">Berwick 1707</div><div class="brow-rule"></div><a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="brow-link">View All</a></div>
-    <div class="card-row">
-      <a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="pcard"><div class="pcard-img"><div class="ph g1"><svg viewBox="0 0 300 200" fill="none"><path d="M28 138C50 94 110 72 166 68C200 66 234 72 262 86C290 100 308 118 314 130C320 140 316 150 302 155C276 162 224 165 164 163C114 161 64 158 44 152C30 147 22 145 28 138Z" fill="#C9A96E"/><rect x="138" y="52" width="70" height="18" rx="4" fill="#C9A96E" opacity="0.5"/></svg><div class="ph-tag">Penny Loafer</div><div class="ph-badge">New</div></div></div><div class="pcard-brand">Berwick 1707</div><div class="pcard-name">9628 Box Calf</div><div class="pcard-note">Goodyear welted · Last 8</div><div class="pcard-price">฿8,800</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="pcard"><div class="pcard-img"><div class="ph g2"><svg viewBox="0 0 300 200" fill="none"><path d="M28 138C50 94 110 72 166 68C200 66 234 72 262 86C290 100 308 118 314 130C320 140 316 150 302 155C276 162 224 165 164 163C114 161 64 158 44 152C30 147 22 145 28 138Z" fill="#C9A96E"/><rect x="142" y="46" width="62" height="10" rx="3" fill="#C9A96E" opacity="0.65"/></svg><div class="ph-tag">Horsebit</div></div></div><div class="pcard-brand">Berwick 1707</div><div class="pcard-name">Horsebit Suede</div><div class="pcard-note">Unlined · Blake stitch</div><div class="pcard-price">฿7,500</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/berwick/" class="pcard"><div class="pcard-img"><div class="ph g3"><svg viewBox="0 0 300 200" fill="none"><path d="M30 140C52 96 112 74 168 70C202 68 236 74 264 88C292 102 308 120 314 132C320 142 314 152 298 157C272 164 218 167 158 165C108 163 58 160 38 154C24 149 18 147 30 140Z" fill="#C9A96E"/><path d="M168 70C172 48 175 32 178 22C182 12 190 8 198 11C208 15 210 32 207 52" stroke="#C9A96E" stroke-width="4" stroke-linecap="round" fill="none"/></svg><div class="ph-tag">Oxford</div><div class="ph-badge">Cordovan</div></div></div><div class="pcard-brand">Berwick 1707</div><div class="pcard-name">Shell Cordovan</div><div class="pcard-note">Goodyear welt · Rois calf</div><div class="pcard-price">฿12,800</div></a>
-    </div>
-  </div>
-  <div class="bblock rv d2">
-    <div class="brow-hd"><div class="brow-name">Carmina</div><div class="brow-rule"></div><a href="https://curatedandcobkk.com/product-category/brands/carmina/" class="brow-link">View All</a></div>
-    <div class="card-row">
-      <a href="https://curatedandcobkk.com/product-category/brands/carmina/" class="pcard"><div class="pcard-img"><div class="ph g4"><svg viewBox="0 0 300 200" fill="none"><path d="M30 140C52 96 112 74 168 70C202 68 236 74 264 88C292 102 308 120 314 132C320 142 314 152 298 157C272 164 218 167 158 165C108 163 58 160 38 154C24 149 18 147 30 140Z" fill="#C9A96E"/><path d="M168 70C172 48 175 32 178 22C182 12 190 8 198 11C208 15 210 32 207 52" stroke="#C9A96E" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="125" cy="116" r="2.5" fill="#C9A96E" opacity="0.5"/><circle cx="140" cy="111" r="2.5" fill="#C9A96E" opacity="0.5"/></svg><div class="ph-tag">Brogue Oxford</div><div class="ph-badge">New</div></div></div><div class="pcard-brand">Carmina</div><div class="pcard-name">Simpson Brogue</div><div class="pcard-note">Full brogue · Double sole</div><div class="pcard-price">฿14,500</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/carmina/" class="pcard"><div class="pcard-img"><div class="ph g5"><svg viewBox="0 0 300 200" fill="none"><path d="M28 138C50 94 110 72 166 68C200 66 234 72 262 86C290 100 308 118 314 130C320 140 316 150 302 155C276 162 224 165 164 163C114 161 64 158 44 152C30 147 22 145 28 138Z" fill="#C9A96E"/><rect x="135" y="50" width="68" height="20" rx="4" fill="#C9A96E" opacity="0.5"/></svg><div class="ph-tag">Penny Loafer</div></div></div><div class="pcard-brand">Carmina</div><div class="pcard-name">Uetam Penny</div><div class="pcard-note">Unlined suede · Last Uetam</div><div class="pcard-price">฿13,200</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/carmina/" class="pcard"><div class="pcard-img"><div class="ph g6"><svg viewBox="0 0 300 200" fill="none"><path d="M28 138C50 94 110 72 166 68C200 66 234 72 262 86C290 100 308 118 314 130C320 140 316 150 302 155C276 162 224 165 164 163C114 161 64 158 44 152C30 147 22 145 28 138Z" fill="#C9A96E"/><rect x="140" y="54" width="58" height="12" rx="6" fill="#C9A96E" opacity="0.6"/></svg><div class="ph-tag">Tassel Loafer</div><div class="ph-badge">Cordovan</div></div></div><div class="pcard-brand">Carmina</div><div class="pcard-name">Cordovan Tassel</div><div class="pcard-note">Horween shell · Last 891</div><div class="pcard-price">฿22,000</div></a>
-    </div>
-  </div>
-  <div class="bblock rv d3">
-    <div class="brow-hd"><div class="brow-name">Paraboot</div><div class="brow-rule"></div><a href="https://curatedandcobkk.com/product-category/brands/paraboot/" class="brow-link">View All</a></div>
-    <div class="card-row">
-      <a href="https://curatedandcobkk.com/product-category/brands/paraboot/" class="pcard"><div class="pcard-img"><div class="ph g7"><svg viewBox="0 0 300 200" fill="none"><path d="M24 140C46 92 108 70 164 66C198 64 232 72 260 88C288 104 306 124 310 136C316 148 310 160 292 165C264 173 208 176 148 174C98 172 50 169 32 162C16 156 10 152 24 140Z" fill="#C9A96E"/><path d="M164 66C167 46 170 32 173 22C177 12 185 8 193 11C203 15 205 30 202 50" stroke="#C9A96E" stroke-width="5" stroke-linecap="round" fill="none"/></svg><div class="ph-tag">Derby</div><div class="ph-badge">Bestseller</div></div></div><div class="pcard-brand">Paraboot</div><div class="pcard-name">Michael Derby</div><div class="pcard-note">Norwegian welt · France</div><div class="pcard-price">฿16,500</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/paraboot/" class="pcard"><div class="pcard-img"><div class="ph g8"><svg viewBox="0 0 300 200" fill="none"><path d="M24 140C46 92 108 70 164 66C198 64 232 72 260 88C288 104 306 124 310 136C316 148 310 160 292 165C264 173 208 176 148 174C98 172 50 169 32 162C16 156 10 152 24 140Z" fill="#C9A96E"/><rect x="138" y="52" width="64" height="16" rx="3" fill="#C9A96E" opacity="0.55"/></svg><div class="ph-tag">Moccasin</div></div></div><div class="pcard-brand">Paraboot</div><div class="pcard-name">Avignon Moc</div><div class="pcard-note">Crepe sole · Nubuck</div><div class="pcard-price">฿14,800</div></a>
-      <a href="https://curatedandcobkk.com/product-category/brands/paraboot/" class="pcard"><div class="pcard-img"><div class="ph g9"><svg viewBox="0 0 300 200" fill="none"><path d="M22 138C44 90 106 68 162 64C196 62 230 70 258 86C286 102 306 122 310 134C316 146 308 158 290 163C262 171 206 174 146 172C96 170 48 167 30 160C14 154 8 150 22 138Z" fill="#C9A96E"/><path d="M162 64C165 44 168 28 171 18C175 8 183 4 191 7C201 11 203 26 200 48" stroke="#C9A96E" stroke-width="5" stroke-linecap="round" fill="none"/></svg><div class="ph-tag">Boot</div><div class="ph-badge">New</div></div></div><div class="pcard-brand">Paraboot</div><div class="pcard-name">Chambord Boot</div><div class="pcard-note">Commando sole · Box calf</div><div class="pcard-price">฿18,500</div></a>
-    </div>
-  </div>
-</section>
-<section class="phil">
-  <span class="sec-ey rv">Our Curation</span>
-  <h2 class="sec-h2 rv d1">Made to Last<br/><em>a Lifetime</em></h2>
-  <p class="phil-body rv d2">We select only the makers who share one conviction — that craft, done right, endures.</p>
-  <div class="phil-rows">
-    <div class="prow d1"><div class="pn">01</div><div><h4>Berwick 1707</h4><p>Goodyear welted in Almansa. Shell cordovan, box calf, deerskin — built for a lifetime.</p></div></div>
-    <div class="prow d2"><div class="pn">02</div><div><h4>Carmina</h4><p>Family-owned in Mallorca since 1958. Ready-to-wear and bespoke, in extraordinary lasts.</p></div></div>
-    <div class="prow d3"><div class="pn">03</div><div><h4>Paraboot</h4><p>Norwegian welt from Romans-sur-Isere. Robust, resoleable, made in France for decades.</p></div></div>
-  </div>
-</section>
-<section class="looks">
-  <div class="sec-hd"><span class="sec-ey rv">The Look</span><h2 class="sec-h2 rv d1">Wear It<br/><em>Your Way</em></h2></div>
-  <div class="looks-reel">
-    <div class="lcard"><div class="lph lp1"><svg viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M24 108C42 76 86 58 132 55C162 53 192 58 218 70C244 82 264 98 270 108C276 116 272 124 258 128C236 133 192 135 144 134C106 133 62 130 42 125C28 121 20 118 24 108Z" fill="#C9A96E"/></svg><div class="llbl"><span>Look 01</span><strong>The Classic</strong></div></div></div>
-    <div class="lcard"><div class="lph lp2"><svg viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M24 108C42 76 86 58 132 55C162 53 192 58 218 70C244 82 264 98 270 108C276 116 272 124 258 128C236 133 192 135 144 134C106 133 62 130 42 125C28 121 20 118 24 108Z" fill="#C9A96E"/></svg><div class="llbl"><span>Look 02</span><strong>The Weekend</strong></div></div></div>
-    <div class="lcard"><div class="lph lp3"><svg viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M24 108C42 76 86 58 132 55C162 53 192 58 218 70C244 82 264 98 270 108C276 116 272 124 258 128C236 133 192 135 144 134C106 133 62 130 42 125C28 121 20 118 24 108Z" fill="#C9A96E"/></svg><div class="llbl"><span>Look 03</span><strong>The Formal</strong></div></div></div>
-    <div class="lcard"><div class="lph lp4"><svg viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M24 108C42 76 86 58 132 55C162 53 192 58 218 70C244 82 264 98 270 108C276 116 272 124 258 128C236 133 192 135 144 134C106 133 62 130 42 125C28 121 20 118 24 108Z" fill="#C9A96E"/></svg><div class="llbl"><span>Look 04</span><strong>The Edit</strong></div></div></div>
-  </div>
-  <a href="https://www.instagram.com/curatedandcobkk/" class="looks-ig" target="_blank" rel="noopener"><span>Follow on Instagram</span><div class="ig-dash"></div></a>
-</section>
-<section class="cta">
-  <span class="sec-ey rv">Visit Us</span>
-  <h2 class="rv d1">Find Your<br/><em>Perfect Pair</em></h2>
-  <p class="cta-sub rv d2">Emporium 1F, Bangkok.<br/>Daily 10:00 – 21:00 · 098-356-8388</p>
-  <div class="cta-btns rv d3">
-    <a href="https://line.me/ti/p/curatedandcobkk" class="btn-g" target="_blank" rel="noopener"><svg class="lico" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>Chat & Shop</a>
-    <a href="https://curatedandcobkk.com" class="btn-p">Browse All</a>
-  </div>
-</section>
-<footer>
-  <div class="ft">
-    <div><div class="fc">C</div><div class="fw">Curated & Co.</div><div class="ftg">Bangkok</div></div>
-    <div class="fa"><p><strong>Emporium 1F</strong></p><p>622 Sukhumvit Rd</p><p>Khlong Toei, 10110</p><p>Daily 10:00 – 21:00</p></div>
-  </div>
-  <div class="fb2">
-    <a href="https://curatedandcobkk.com/product-category/brands/berwick/">Berwick 1707</a>
-    <a href="https://curatedandcobkk.com/product-category/brands/carmina/">Carmina</a>
-    <a href="https://curatedandcobkk.com/product-category/brands/paraboot/">Paraboot</a>
-  </div>
-  <div class="fn">
-    <a href="https://curatedandcobkk.com">Shop</a>
-    <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://line.me/ti/p/curatedandcobkk" target="_blank" rel="noopener">LINE</a>
-    <a href="tel:0983568388">098-356-8388</a>
-  </div>
-  <div class="fcp">2025 Curated & Co. Bangkok</div>
-  <div class="fv">v7.0.0</div>
-</footer>
-<script>
-const nav=document.getElementById('nav');
-const heroEl=document.getElementById('hero');
-window.addEventListener('scroll',()=>{nav.className=window.scrollY<heroEl.offsetHeight-70?'nav h':'nav l'},{passive:true});
-const slidesEl=document.getElementById('slides');
-const dots=document.querySelectorAll('.dot');
-const slideEls=document.querySelectorAll('.slide');
-let cur=0,total=slideEls.length,timer,startX=0;
-function goTo(n){slideEls[cur].classList.remove('on');dots[cur].classList.remove('on');cur=(n+total)%total;slideEls[cur].classList.add('on');dots[cur].classList.add('on');slidesEl.style.transform='translateX(-'+cur*100+'%)'}
-function start(){timer=setInterval(()=>goTo(cur+1),5500)}
-function stop(){clearInterval(timer)}
-dots.forEach(d=>d.addEventListener('click',()=>{stop();goTo(+d.dataset.i);start()}));
-heroEl.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});
-heroEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>40){stop();goTo(dx<0?cur+1:cur-1);start()}},{passive:true});
-start();
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
-document.querySelectorAll('.rv,.prow').forEach(el=>io.observe(el));
-</script>
+    <div class="footer-copy">© 2025 Curated & Co. Bangkok. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const pillars = document.querySelectorAll('.craft-pillar');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+    pillars.forEach(el => observer.observe(el));
+
+    // Parallax on hero
+    const hero = document.getElementById('hero');
+    const heroMedia = hero?.querySelector('.hero-media, .hero-video');
+    if (heroMedia) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+          heroMedia.style.transform = `scale(1.08) translateY(${y * 0.15}px)`;
+        }
+      }, { passive: true });
+    }
+  </script>
 
 </body>
 </html>
