@@ -17,20 +17,12 @@ const ctaUrl = "https://curatedandcobkk.com/product-category/brands/berwick/";
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 a{color:inherit;text-decoration:none}
-:root{
-  --green:#0D2B1F;--gold:#B8924A;--gold2:#CFA55A;
-  --cream:#F7F4EF;--page:#FAFAF8;--ink:#111;--mid:#5A5A58;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-  --fd:'Cormorant Garamond',Georgia,serif;
-  --fb:'Jost',sans-serif;
-}
+:root{--green:#0D2B1F;--gold:#B8924A;--gold2:#CFA55A;--cream:#F7F4EF;--page:#FAFAF8;--ink:#111;--mid:#5A5A58;--ease:cubic-bezier(0.16,1,0.3,1);--fd:'Cormorant Garamond',Georgia,serif;--fb:'Jost',sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
-
-/* NAV */
 .nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(60px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 24px 0;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease)}
 .nav.h{background:linear-gradient(to bottom,rgba(0,0,0,.45),transparent)}
 .nav.l{background:var(--page);border-bottom:1px solid rgba(17,17,17,.07)}
@@ -53,30 +45,28 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.18) 50%,rgba(0,0,0,.06) 100%)}
 .hero-body{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 32px calc(72px + env(safe-area-inset-bottom))}
 .hero-eyebrow{font-size:7px;letter-spacing:.65em;text-transform:uppercase;color:rgba(184,146,74,.55);margin-bottom:12px}
-.hero-title{font-family:var(--fd);font-size:clamp(32px,9vw,52px);font-weight:300;color:rgba(255,255,255,.8);line-height:.95;margin-bottom:8px;letter-spacing:-.01em}
+.hero-title{font-family:var(--fd);font-size:clamp(32px,9vw,52px);font-weight:300;color:rgba(255,255,255,.8);line-height:.95;margin-bottom:8px}
 .hero-title em{font-style:italic;color:rgba(184,146,74,.7)}
 .hero-sub{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.06em;line-height:1.8;margin-bottom:30px;max-width:220px}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(184,146,74,.28);color:rgba(184,146,74,.65);font-family:var(--fb);font-size:7px;font-weight:400;letter-spacing:.5em;text-transform:uppercase;padding:12px 26px;transition:border-color .3s,color .3s}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(184,146,74,.28);color:rgba(184,146,74,.65);font-family:var(--fb);font-size:7px;font-weight:400;letter-spacing:.5em;text-transform:uppercase;padding:12px 26px}
 
-/* 3 CATEGORY SECTIONS — full bleed stacked with gap */
-.cat-wrap{display:flex;flex-direction:column;gap:3px;background:#0a0a0a}
+/* 3 CATEGORY PANELS — significantly taller, white dividers */
+.cat-wrap{display:flex;flex-direction:column;background:#fff;gap:1px}
 
 .cat-sec{
   position:relative;
-  height:75vw;
-  min-height:280px;
-  max-height:420px;
+  height:92vw;
+  min-height:340px;
+  max-height:520px;
   overflow:hidden;
   display:block;
   text-decoration:none;
 }
 
-/* backgrounds per category */
-.cat-sec.loafer{background:linear-gradient(160deg,#0C2118 0%,#0F2D1E 50%,#122F20 100%)}
-.cat-sec.oxford{background:linear-gradient(160deg,#141414 0%,#1a1a18 50%,#1e1c17 100%)}
-.cat-sec.flex{background:linear-gradient(160deg,#0A1B12 0%,#0D2419 50%,#102819 100%)}
+.cat-sec.loafer{background:linear-gradient(160deg,#0C2118,#0F2D1E 50%,#122F20)}
+.cat-sec.oxford{background:linear-gradient(160deg,#141414,#1c1c1a 50%,#201e18)}
+.cat-sec.flex{background:linear-gradient(160deg,#0A1B12,#0D2419 50%,#102819)}
 
-/* large decorative shoe SVG centered */
 .cat-bg-art{
   position:absolute;
   inset:0;
@@ -87,90 +77,45 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
   pointer-events:none;
 }
 .cat-bg-art svg{
-  width:85%;
-  max-width:360px;
-  opacity:.07;
-  animation:float 18s ease-in-out infinite alternate;
+  width:90%;
+  max-width:420px;
+  opacity:.08;
+  animation:float 20s ease-in-out infinite alternate;
 }
-@keyframes float{
-  from{transform:scale(1) translateY(0)}
-  to{transform:scale(1.04) translateY(-12px)}
-}
+@keyframes float{from{transform:scale(1)}to{transform:scale(1.05) translateY(-14px)}}
 
-/* gradient overlay */
 .cat-overlay{
   position:absolute;
   inset:0;
   z-index:2;
-  background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,0) 70%);
+  background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,0) 75%);
 }
 
-/* content pinned bottom-left */
 .cat-body{
   position:absolute;
   bottom:0;
   left:0;
   right:0;
   z-index:3;
-  padding:0 32px 32px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  padding:0 32px 36px;
 }
-.cat-number{
+.cat-num{
+  position:absolute;
+  right:24px;
+  bottom:28px;
   font-family:var(--fd);
-  font-size:clamp(56px,18vw,96px);
+  font-size:clamp(72px,22vw,120px);
   font-weight:300;
   color:rgba(255,255,255,.04);
   line-height:1;
-  position:absolute;
-  right:28px;
-  bottom:24px;
-  letter-spacing:-.02em;
-  user-select:none;
   z-index:2;
+  user-select:none;
 }
-.cat-tag{
-  font-size:7px;
-  letter-spacing:.55em;
-  text-transform:uppercase;
-  color:rgba(184,146,74,.5);
-  margin-bottom:10px;
-}
-.cat-name{
-  font-family:var(--fd);
-  font-size:clamp(30px,9vw,46px);
-  font-weight:300;
-  color:#fff;
-  line-height:.95;
-  margin-bottom:10px;
-  letter-spacing:-.01em;
-}
-.cat-desc{
-  font-size:10px;
-  color:rgba(255,255,255,.35);
-  letter-spacing:.04em;
-  line-height:1.7;
-  margin-bottom:18px;
-  max-width:240px;
-}
-.cat-cta{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  font-size:7px;
-  letter-spacing:.45em;
-  text-transform:uppercase;
-  color:rgba(184,146,74,.65);
-}
-.cat-cta::after{
-  content:'';
-  width:24px;
-  height:1px;
-  background:rgba(184,146,74,.45);
-  display:block;
-  transition:width .3s var(--ease);
-}
+.cat-tag{font-size:7px;letter-spacing:.55em;text-transform:uppercase;color:rgba(184,146,74,.5);margin-bottom:12px}
+.cat-name{font-family:var(--fd);font-size:clamp(36px,11vw,56px);font-weight:300;color:#fff;line-height:.92;margin-bottom:12px;letter-spacing:-.01em}
+.cat-desc{font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.04em;line-height:1.75;margin-bottom:20px;max-width:260px}
+.cat-cta{display:inline-flex;align-items:center;gap:12px;font-size:7px;letter-spacing:.48em;text-transform:uppercase;color:rgba(184,146,74,.65)}
+.cat-cta::after{content:'';width:28px;height:1px;background:rgba(184,146,74,.4);display:block}
 
 /* PRODUCTS */
 .col{background:var(--page);padding:60px 0 68px}
@@ -200,7 +145,6 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 .pcard-note{font-size:9px;color:var(--mid);line-height:1.5;margin-bottom:7px}
 .pcard-price{font-family:var(--fd);font-size:14px;font-weight:400;color:var(--ink)}
 
-/* OUR FAVOURITE */
 .phil{background:var(--green);padding:68px 24px;position:relative;overflow:hidden}
 .phil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(184,146,74,.06),transparent 70%);pointer-events:none}
 .phil .sec-ey{color:rgba(184,146,74,.55)}
@@ -214,7 +158,6 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 .prow h4{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:6px}
 .prow p{font-size:12px;line-height:1.8;color:rgba(255,255,255,.3)}
 
-/* CTA */
 .cta{background:var(--page);padding:72px 24px;border-top:1px solid rgba(17,17,17,.06)}
 .cta h2{font-family:var(--fd);font-size:clamp(32px,9vw,48px);font-weight:300;color:var(--ink);line-height:1.1}
 .cta h2 em{color:var(--green);font-style:italic}
@@ -223,8 +166,6 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 .btn-g{display:inline-flex;align-items:center;gap:12px;background:#06C755;color:#fff;font-family:var(--fb);font-size:8px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;padding:16px 32px;min-height:50px}
 .btn-p{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#fff;font-family:var(--fb);font-size:8px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;padding:16px 32px;min-height:50px}
 .lico{width:18px;height:18px;flex-shrink:0}
-
-/* FOOTER */
 footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset-bottom))}
 .ft{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
 .fc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;color:#fff;margin-bottom:7px}
@@ -248,7 +189,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   <div class="nav-burger"><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="hero">
   <div class="hero-media">
     {heroVideo && <video autoplay muted loop playsinline src={heroVideo}></video>}
@@ -263,19 +203,19 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </div>
 </div>
 
-<!-- 3 FULL-BLEED CATEGORY SECTIONS -->
+<!-- 3 CATEGORY PANELS — tall, white 1px dividers between -->
 <div class="cat-wrap">
 
   <a href="https://curatedandcobkk.com/product-category/berwick-welted-loafers/" class="cat-sec loafer">
     <div class="cat-bg-art">
       <svg viewBox="0 0 560 280" fill="none">
         <path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/>
-        <rect x="224" y="80" width="112" height="24" rx="12" fill="#C9A96E" opacity="0.5"/>
-        <rect x="248" y="64" width="64" height="16" rx="8" fill="#C9A96E" opacity="0.3"/>
+        <rect x="210" y="72" width="140" height="28" rx="14" fill="#C9A96E" opacity="0.45"/>
+        <rect x="240" y="56" width="80" height="16" rx="8" fill="#C9A96E" opacity="0.25"/>
       </svg>
     </div>
     <div class="cat-overlay"></div>
-    <div class="cat-number">01</div>
+    <div class="cat-num">01</div>
     <div class="cat-body">
       <div class="cat-tag">Berwick 1707</div>
       <div class="cat-name">Welted<br/>Loafers</div>
@@ -289,16 +229,17 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
       <svg viewBox="0 0 560 280" fill="none">
         <path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/>
         <path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/>
-        <path d="M220 118C230 114 242 112 255 112" stroke="#C9A96E" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
-        <path d="M220 128C230 124 242 122 258 122" stroke="#C9A96E" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+        <path d="M215 120C228 116 244 114 260 114" stroke="#C9A96E" stroke-width="2.5" opacity="0.35" stroke-linecap="round"/>
+        <path d="M215 132C228 128 244 126 262 126" stroke="#C9A96E" stroke-width="2.5" opacity="0.25" stroke-linecap="round"/>
+        <path d="M215 144C228 140 246 138 264 138" stroke="#C9A96E" stroke-width="2.5" opacity="0.15" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="cat-overlay"></div>
-    <div class="cat-number">02</div>
+    <div class="cat-num">02</div>
     <div class="cat-body">
       <div class="cat-tag">Berwick 1707</div>
       <div class="cat-name">Oxford<br/>Shoes</div>
-      <div class="cat-desc">Shell cordovan & box calf — the pinnacle of formal dress shoes, built to last decades</div>
+      <div class="cat-desc">Shell cordovan & box calf — formal shoes built to last decades, resoleable for life</div>
       <div class="cat-cta">Shop the Collection</div>
     </div>
   </a>
@@ -308,12 +249,13 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
       <svg viewBox="0 0 560 280" fill="none">
         <path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/>
         <path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="8" stroke-linecap="round" fill="none"/>
-        <circle cx="200" cy="175" r="8" fill="#C9A96E" opacity="0.2"/>
-        <circle cx="320" cy="175" r="8" fill="#C9A96E" opacity="0.2"/>
+        <circle cx="195" cy="178" r="10" fill="#C9A96E" opacity="0.18"/>
+        <circle cx="325" cy="178" r="10" fill="#C9A96E" opacity="0.18"/>
+        <circle cx="260" cy="182" r="6" fill="#C9A96E" opacity="0.12"/>
       </svg>
     </div>
     <div class="cat-overlay"></div>
-    <div class="cat-number">03</div>
+    <div class="cat-num">03</div>
     <div class="cat-body">
       <div class="cat-tag">Berwick 1707</div>
       <div class="cat-name">Flex<br/>Walks</div>
@@ -324,7 +266,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 </div>
 
-<!-- PRODUCTS -->
 <section class="col">
   <div class="sec-hd"><span class="sec-ey rv">The Edit</span><h2 class="sec-h2 rv d1">Selected<br/><em>for Bangkok</em></h2></div>
   <div class="bblock rv d1">
@@ -353,7 +294,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </div>
 </section>
 
-<!-- OUR FAVOURITE -->
 <section class="phil">
   <span class="sec-ey rv">Our Favourite</span>
   <h2 class="sec-h2 rv d1">Made to Last<br/><em>a Lifetime</em></h2>
@@ -365,7 +305,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <span class="sec-ey rv">Visit Us</span>
   <h2 class="rv d1">Find Your<br/><em>Perfect Pair</em></h2>
@@ -393,7 +332,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     <a href="tel:0983568388">098-356-8388</a>
   </div>
   <div class="fcp">2025 Curated & Co. Bangkok</div>
-  <div class="fv">v9.0.0</div>
+  <div class="fv">v10.0.0</div>
 </footer>
 
 <script>
