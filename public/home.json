@@ -14,21 +14,24 @@
     "name1": "Welted",
     "name2": "Loafers",
     "desc": "Penny, horsebit & tassel — Goodyear welted in Almansa, Spain since 1707",
-    "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/"
+    "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg"
   },
   "cat2": {
     "tag": "Berwick 1707",
     "name1": "Oxford",
     "name2": "Shoes",
     "desc": "Shell cordovan & box calf — the pinnacle of formal dress, built to last decades",
-    "url": "https://curatedandcobkk.com/product-category/oxford-shoes/"
+    "url": "https://curatedandcobkk.com/product-category/oxford-shoes/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049828/Loafers_hcsamd.jpg"
   },
   "cat3": {
     "tag": "Berwick 1707",
     "name1": "Flex",
     "name2": "Walks",
     "desc": "Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined",
-    "url": "https://curatedandcobkk.com/product-category/berwick-flex-walks/"
+    "url": "https://curatedandcobkk.com/product-category/berwick-flex-walks/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg"
   },
   "favourite": {
     "eyebrow": "Our Favourite",
