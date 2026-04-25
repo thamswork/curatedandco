@@ -20,57 +20,60 @@ collections:
             widget: "object"
             fields:
               - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false, hint: "Paste Cloudinary video URL" }
-              - { label: "Hero Image URL (fallback)", name: "heroImage", widget: "string", required: false, hint: "Shown if no video" }
+              - { label: "Hero Image (fallback)", name: "heroImage", widget: "image", required: false }
               - { label: "Eyebrow Text", name: "heroEyebrow", widget: "string", default: "Bangkok · Thailand" }
               - { label: "Title Line 1", name: "heroLine1", widget: "string", default: "Curated" }
-              - { label: "Title Line 2 (italic)", name: "heroLine2", widget: "string", default: "& Co." }
-              - { label: "Subtitle", name: "heroSub", widget: "string", default: "A curated edit of Europe's finest shoemaking — for those who know." }
+              - { label: "Title Line 2 italic", name: "heroLine2", widget: "string", default: "& Co." }
+              - { label: "Subtitle", name: "heroSub", widget: "string" }
               - { label: "CTA Text", name: "heroCta", widget: "string", default: "Discover All" }
-              - { label: "CTA URL", name: "heroCtaUrl", widget: "string", default: "https://curatedandcobkk.com" }
+              - { label: "CTA URL", name: "heroCtaUrl", widget: "string" }
 
-          - label: "Category 1 — Welted Loafers"
+          - label: "Category 1 - Welted Loafers"
             name: "cat1"
             widget: "object"
             fields:
+              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Welted" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Loafers" }
-              - { label: "Description", name: "desc", widget: "string", default: "Penny, horsebit & tassel — Goodyear welted in Almansa, Spain since 1707" }
-              - { label: "Link URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/product-category/berwick-welted-loafers/" }
+              - { label: "Description", name: "desc", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
 
-          - label: "Category 2 — Oxford Shoes"
+          - label: "Category 2 - Oxford Shoes"
             name: "cat2"
             widget: "object"
             fields:
+              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Oxford" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Shoes" }
-              - { label: "Description", name: "desc", widget: "string", default: "Shell cordovan & box calf — the pinnacle of formal dress, built to last decades" }
-              - { label: "Link URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/product-category/oxford-shoes/" }
+              - { label: "Description", name: "desc", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
 
-          - label: "Category 3 — Flex Walks"
+          - label: "Category 3 - Flex Walks"
             name: "cat3"
             widget: "object"
             fields:
+              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Flex" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Walks" }
-              - { label: "Description", name: "desc", widget: "string", default: "Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined" }
-              - { label: "Link URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/product-category/berwick-flex-walks/" }
+              - { label: "Description", name: "desc", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
 
           - label: "Our Favourite Section"
             name: "favourite"
             widget: "object"
             fields:
-              - { label: "Section Eyebrow", name: "eyebrow", widget: "string", default: "Our Favourite" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string", default: "Our Favourite" }
               - { label: "Heading Line 1", name: "heading1", widget: "string", default: "Made to Last" }
-              - { label: "Heading Line 2 (italic)", name: "heading2", widget: "string", default: "a Lifetime" }
-              - { label: "Body Text", name: "body", widget: "text", default: "Berwick 1707 represents the pinnacle of Spanish shoemaking tradition." }
+              - { label: "Heading Line 2 italic", name: "heading2", widget: "string", default: "a Lifetime" }
+              - { label: "Body Text", name: "body", widget: "text" }
 
-          - label: "Visit Us Section"
+          - label: "Visit Us"
             name: "visit"
             widget: "object"
             fields:
-              - { label: "Address Line", name: "address", widget: "string", default: "Emporium 1F, Bangkok." }
-              - { label: "Hours & Phone", name: "hours", widget: "string", default: "Daily 10:00 – 21:00 · 098-356-8388" }
-              - { label: "LINE URL", name: "lineUrl", widget: "string", default: "https://line.me/ti/p/curatedandcobkk" }
+              - { label: "Address", name: "address", widget: "string", default: "Emporium 1F, Bangkok." }
+              - { label: "Hours and Phone", name: "hours", widget: "string", default: "Daily 10:00 - 21:00 · 098-356-8388" }
+              - { label: "LINE URL", name: "lineUrl", widget: "string" }
