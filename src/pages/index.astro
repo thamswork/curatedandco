@@ -176,6 +176,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 .fn a{font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.18)}
 .fcp{font-size:7px;letter-spacing:.1em;color:rgba(255,255,255,.11)}
 .fv{font-size:6px;color:rgba(184,146,74,.14);margin-top:4px}
+.cat-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 </style>
 </head>
 <body>
@@ -203,7 +204,8 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 <div class="cats">
   <a href={cat1.url} class="cat-card loafer">
-    <div class="cat-art"><svg viewBox="0 0 560 280" fill="none"><path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/><rect x="210" y="72" width="140" height="28" rx="14" fill="#C9A96E" opacity="0.6"/><rect x="240" y="52" width="80" height="20" rx="10" fill="#C9A96E" opacity="0.35"/></svg></div>
+    {cat1.photo && <img class="cat-photo" src={cat1.photo} alt={cat1.name1}/>}
+    <div class="cat-art" style={cat1.photo ? "opacity:0" : ""}><svg viewBox="0 0 560 280" fill="none"><path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/><rect x="210" y="72" width="140" height="28" rx="14" fill="#C9A96E" opacity="0.6"/><rect x="240" y="52" width="80" height="20" rx="10" fill="#C9A96E" opacity="0.35"/></svg></div>
     <div class="cat-grad"></div>
     <div class="cat-ghost-num">01</div>
     <div class="cat-content">
@@ -215,7 +217,8 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </a>
 
   <a href={cat2.url} class="cat-card oxford">
-    <div class="cat-art"><svg viewBox="0 0 560 280" fill="none"><path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/><path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M215 122C230 118 248 116 265 116" stroke="#C9A96E" stroke-width="3" opacity="0.4" stroke-linecap="round"/><path d="M215 136C230 132 248 130 266 130" stroke="#C9A96E" stroke-width="3" opacity="0.25" stroke-linecap="round"/></svg></div>
+    {cat2.photo && <img class="cat-photo" src={cat2.photo} alt={cat2.name1}/>}
+    <div class="cat-art" style={cat2.photo ? "opacity:0" : ""}><svg viewBox="0 0 560 280" fill="none"><path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/><path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M215 122C230 118 248 116 265 116" stroke="#C9A96E" stroke-width="3" opacity="0.4" stroke-linecap="round"/><path d="M215 136C230 132 248 130 266 130" stroke="#C9A96E" stroke-width="3" opacity="0.25" stroke-linecap="round"/></svg></div>
     <div class="cat-grad"></div>
     <div class="cat-ghost-num">02</div>
     <div class="cat-content">
@@ -227,7 +230,8 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </a>
 
   <a href={cat3.url} class="cat-card flex">
-    <div class="cat-art"><svg viewBox="0 0 560 280" fill="none"><path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/><path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="192" cy="178" r="12" fill="#C9A96E" opacity="0.2"/><circle cx="328" cy="178" r="12" fill="#C9A96E" opacity="0.2"/></svg></div>
+    {cat3.photo && <img class="cat-photo" src={cat3.photo} alt={cat3.name1}/>}
+    <div class="cat-art" style={cat3.photo ? "opacity:0" : ""}><svg viewBox="0 0 560 280" fill="none"><path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/><path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="192" cy="178" r="12" fill="#C9A96E" opacity="0.2"/><circle cx="328" cy="178" r="12" fill="#C9A96E" opacity="0.2"/></svg></div>
     <div class="cat-grad"></div>
     <div class="cat-ghost-num">03</div>
     <div class="cat-content">
