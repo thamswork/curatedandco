@@ -27,6 +27,7 @@ const favH2 = ${JSON.stringify(fav.heading2 || 'a Lifetime')};
 const favBody = ${JSON.stringify(fav.body || '')};
 const visitAddress = ${JSON.stringify(vis.address || 'Emporium 1F, Bangkok.')};
 const visitHours = ${JSON.stringify(vis.hours || 'Daily 10:00 – 21:00 · 098-356-8388')};
+const logo = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777111636/Untitled_design_w0ei4t.png";
 const visitLine = ${JSON.stringify(vis.lineUrl || 'https://line.me/ti/p/curatedandcobkk')};
 ---`;
 astro = astro.replace(/^---[\s\S]*?---/, newFront);
