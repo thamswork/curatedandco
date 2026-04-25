@@ -17,67 +17,166 @@ const ctaUrl = "https://curatedandcobkk.com/product-category/brands/berwick/";
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 a{color:inherit;text-decoration:none}
-:root{--green:#0D2B1F;--gold:#B8924A;--gold2:#CFA55A;--cream:#F7F4EF;--page:#FAFAF8;--ink:#111;--mid:#5A5A58;--ease:cubic-bezier(0.16,1,0.3,1);--fd:'Cormorant Garamond',Georgia,serif;--fb:'Jost',sans-serif}
+:root{
+  --green:#0D2B1F;--gold:#B8924A;--gold2:#CFA55A;
+  --cream:#F7F4EF;--page:#FAFAF8;--ink:#111;--mid:#5A5A58;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'Jost',sans-serif;
+}
 html{scroll-behavior:smooth}
 body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
 
 /* NAV */
-.nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(60px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 20px 0;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease)}
-.nav.h{background:linear-gradient(to bottom,rgba(13,43,31,.6),transparent)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(60px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 24px 0;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease)}
+.nav.h{background:linear-gradient(to bottom,rgba(0,0,0,.45),transparent)}
 .nav.l{background:var(--page);border-bottom:1px solid rgba(17,17,17,.07)}
 .nav-logo{display:flex;align-items:center;gap:10px}
 .nav-c{width:30px;height:30px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:13px;font-weight:300;transition:color .4s}
 .nav-wm{font-family:var(--fb);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;transition:color .4s}
-.nav.h .nav-c,.nav.h .nav-wm{color:rgba(255,255,255,.75)}
+.nav.h .nav-c,.nav.h .nav-wm{color:rgba(255,255,255,.8)}
 .nav.l .nav-c,.nav.l .nav-wm{color:var(--green)}
 .nav-burger{display:flex;flex-direction:column;gap:5px;align-items:flex-end;justify-content:center;min-width:44px;min-height:44px;cursor:pointer}
 .nav-burger span{display:block;height:1px;transition:background .4s}
-.nav.h .nav-burger span{background:rgba(255,255,255,.6)}
+.nav.h .nav-burger span{background:rgba(255,255,255,.65)}
 .nav.l .nav-burger span{background:var(--green)}
 .nav-burger span:first-child{width:22px}
-.nav-burger span:last-child{width:12px}
+.nav-burger span:last-child{width:13px}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:580px;overflow:hidden;background:#111}
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0a0a0a}
 .hero-media{position:absolute;inset:0;z-index:1}
 .hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.08) 100%)}
-.hero-body{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 28px calc(64px + env(safe-area-inset-bottom))}
-.hero-eyebrow{font-size:7px;letter-spacing:.6em;text-transform:uppercase;color:rgba(184,146,74,.6);margin-bottom:10px}
-.hero-title{font-family:var(--fd);font-size:clamp(36px,10vw,56px);font-weight:300;color:rgba(255,255,255,.85);line-height:.95;margin-bottom:6px}
-.hero-title em{font-style:italic;color:rgba(184,146,74,.75)}
-.hero-sub{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.05em;line-height:1.7;margin-bottom:28px;max-width:240px}
-.hero-cta{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(184,146,74,.3);color:rgba(184,146,74,.7);font-family:var(--fb);font-size:7px;font-weight:400;letter-spacing:.45em;text-transform:uppercase;padding:11px 24px}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.18) 50%,rgba(0,0,0,.06) 100%)}
+.hero-body{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 32px calc(72px + env(safe-area-inset-bottom))}
+.hero-eyebrow{font-size:7px;letter-spacing:.65em;text-transform:uppercase;color:rgba(184,146,74,.55);margin-bottom:12px}
+.hero-title{font-family:var(--fd);font-size:clamp(32px,9vw,52px);font-weight:300;color:rgba(255,255,255,.8);line-height:.95;margin-bottom:8px;letter-spacing:-.01em}
+.hero-title em{font-style:italic;color:rgba(184,146,74,.7)}
+.hero-sub{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.06em;line-height:1.8;margin-bottom:30px;max-width:220px}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(184,146,74,.28);color:rgba(184,146,74,.65);font-family:var(--fb);font-size:7px;font-weight:400;letter-spacing:.5em;text-transform:uppercase;padding:12px 26px;transition:border-color .3s,color .3s}
 
-/* 3 CATEGORY SECTIONS — full bleed */
-.cat-sections{display:flex;flex-direction:column}
-.cat-sec{position:relative;height:56vw;min-height:220px;max-height:340px;overflow:hidden;display:flex;align-items:flex-end;padding:24px 28px;text-decoration:none}
-.cat-sec-bg{position:absolute;inset:0;z-index:1}
-.cat-sec-bg-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
-.cat-sec-overlay{position:absolute;inset:0;z-index:2}
-.cat-sec.loafer .cat-sec-bg{background:linear-gradient(135deg,#0A1E14,#0D2B1F)}
-.cat-sec.loafer .cat-sec-overlay{background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.1) 60%)}
-.cat-sec.oxford .cat-sec-bg{background:linear-gradient(135deg,#111,#1a1a1a)}
-.cat-sec.oxford .cat-sec-overlay{background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 60%)}
-.cat-sec.flex .cat-sec-bg{background:linear-gradient(135deg,#0B1F16,#142E1F)}
-.cat-sec.flex .cat-sec-overlay{background:linear-gradient(to top,rgba(0,0,0,.55) 0%,rgba(0,0,0,.05) 60%)}
-.cat-sec-svg{position:absolute;width:70%;opacity:.09;animation:caf 20s ease-in-out infinite alternate}
-@keyframes caf{from{transform:scale(1) rotate(-1deg)}to{transform:scale(1.06) rotate(1deg) translateY(-8px)}}
-.cat-sec-body{position:relative;z-index:3}
-.cat-sec-tag{font-size:7px;letter-spacing:.5em;text-transform:uppercase;color:rgba(184,146,74,.55);margin-bottom:8px}
-.cat-sec-name{font-family:var(--fd);font-size:clamp(26px,7vw,38px);font-weight:300;color:#fff;line-height:1;margin-bottom:6px}
-.cat-sec-desc{font-size:10px;color:rgba(255,255,255,.38);letter-spacing:.04em;line-height:1.6;margin-bottom:14px}
-.cat-sec-link{display:inline-flex;align-items:center;gap:8px;font-size:7px;letter-spacing:.4em;text-transform:uppercase;color:rgba(184,146,74,.7)}
-.cat-sec-link::after{content:'';width:20px;height:1px;background:rgba(184,146,74,.5);display:block}
+/* 3 CATEGORY SECTIONS — full bleed stacked with gap */
+.cat-wrap{display:flex;flex-direction:column;gap:3px;background:#0a0a0a}
+
+.cat-sec{
+  position:relative;
+  height:75vw;
+  min-height:280px;
+  max-height:420px;
+  overflow:hidden;
+  display:block;
+  text-decoration:none;
+}
+
+/* backgrounds per category */
+.cat-sec.loafer{background:linear-gradient(160deg,#0C2118 0%,#0F2D1E 50%,#122F20 100%)}
+.cat-sec.oxford{background:linear-gradient(160deg,#141414 0%,#1a1a18 50%,#1e1c17 100%)}
+.cat-sec.flex{background:linear-gradient(160deg,#0A1B12 0%,#0D2419 50%,#102819 100%)}
+
+/* large decorative shoe SVG centered */
+.cat-bg-art{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+  pointer-events:none;
+}
+.cat-bg-art svg{
+  width:85%;
+  max-width:360px;
+  opacity:.07;
+  animation:float 18s ease-in-out infinite alternate;
+}
+@keyframes float{
+  from{transform:scale(1) translateY(0)}
+  to{transform:scale(1.04) translateY(-12px)}
+}
+
+/* gradient overlay */
+.cat-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,0) 70%);
+}
+
+/* content pinned bottom-left */
+.cat-body{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:3;
+  padding:0 32px 32px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.cat-number{
+  font-family:var(--fd);
+  font-size:clamp(56px,18vw,96px);
+  font-weight:300;
+  color:rgba(255,255,255,.04);
+  line-height:1;
+  position:absolute;
+  right:28px;
+  bottom:24px;
+  letter-spacing:-.02em;
+  user-select:none;
+  z-index:2;
+}
+.cat-tag{
+  font-size:7px;
+  letter-spacing:.55em;
+  text-transform:uppercase;
+  color:rgba(184,146,74,.5);
+  margin-bottom:10px;
+}
+.cat-name{
+  font-family:var(--fd);
+  font-size:clamp(30px,9vw,46px);
+  font-weight:300;
+  color:#fff;
+  line-height:.95;
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.cat-desc{
+  font-size:10px;
+  color:rgba(255,255,255,.35);
+  letter-spacing:.04em;
+  line-height:1.7;
+  margin-bottom:18px;
+  max-width:240px;
+}
+.cat-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:7px;
+  letter-spacing:.45em;
+  text-transform:uppercase;
+  color:rgba(184,146,74,.65);
+}
+.cat-cta::after{
+  content:'';
+  width:24px;
+  height:1px;
+  background:rgba(184,146,74,.45);
+  display:block;
+  transition:width .3s var(--ease);
+}
 
 /* PRODUCTS */
-.col{background:var(--page);padding:56px 0 64px}
+.col{background:var(--page);padding:60px 0 68px}
 .sec-hd{padding:0 24px;margin-bottom:36px}
 .sec-ey{display:block;font-size:7px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.sec-h2{font-family:var(--fd);font-size:clamp(30px,8vw,44px);font-weight:300;color:var(--ink);line-height:1.05}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,9vw,46px);font-weight:300;color:var(--ink);line-height:1.05}
 .sec-h2 em{color:var(--green);font-style:italic}
 .bblock{margin-bottom:48px}
 .bblock:last-child{margin-bottom:0}
@@ -102,18 +201,18 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 .pcard-price{font-family:var(--fd);font-size:14px;font-weight:400;color:var(--ink)}
 
 /* OUR FAVOURITE */
-.phil{background:var(--green);padding:64px 24px;position:relative;overflow:hidden}
+.phil{background:var(--green);padding:68px 24px;position:relative;overflow:hidden}
 .phil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(184,146,74,.06),transparent 70%);pointer-events:none}
-.phil .sec-ey{color:rgba(184,146,74,.6)}
+.phil .sec-ey{color:rgba(184,146,74,.55)}
 .phil .sec-h2{color:#fff}
 .phil .sec-h2 em{color:var(--gold2);font-style:italic}
-.phil-body{font-family:var(--fd);font-style:italic;font-size:16px;line-height:2;color:rgba(255,255,255,.42);margin:24px 0 44px}
+.phil-body{font-family:var(--fd);font-style:italic;font-size:16px;line-height:2;color:rgba(255,255,255,.4);margin:24px 0 44px}
 .phil-rows{border-top:1px solid rgba(255,255,255,.08)}
 .prow{display:grid;grid-template-columns:36px 1fr;gap:0 16px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.06);opacity:0;transform:translateX(-10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .prow.in{opacity:1;transform:none}
-.pn{font-family:var(--fd);font-size:26px;font-weight:300;color:rgba(184,146,74,.3);line-height:1;padding-top:4px}
-.prow h4{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
-.prow p{font-size:12px;line-height:1.8;color:rgba(255,255,255,.32)}
+.pn{font-family:var(--fd);font-size:26px;font-weight:300;color:rgba(184,146,74,.28);line-height:1;padding-top:4px}
+.prow h4{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:6px}
+.prow p{font-size:12px;line-height:1.8;color:rgba(255,255,255,.3)}
 
 /* CTA */
 .cta{background:var(--page);padding:72px 24px;border-top:1px solid rgba(17,17,17,.06)}
@@ -128,18 +227,18 @@ body{background:var(--page);color:var(--ink);font-family:var(--fb);font-weight:3
 /* FOOTER */
 footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset-bottom))}
 .ft{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
-.fc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;color:#fff;margin-bottom:7px}
+.fc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;color:#fff;margin-bottom:7px}
 .fw{font-family:var(--fb);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#fff}
-.ftg{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-top:2px}
+.ftg{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-top:2px}
 .fa{text-align:right}
-.fa p{font-size:9px;color:rgba(255,255,255,.32);line-height:1.9}
-.fa strong{color:rgba(255,255,255,.6);font-weight:400}
+.fa p{font-size:9px;color:rgba(255,255,255,.3);line-height:1.9}
+.fa strong{color:rgba(255,255,255,.55);font-weight:400}
 .fb2{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-.fb2 a{font-family:var(--fd);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.fb2 a{font-family:var(--fd);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.26)}
 .fn{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
-.fn a{font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.2)}
-.fcp{font-size:7px;letter-spacing:.1em;color:rgba(255,255,255,.12)}
-.fv{font-size:6px;color:rgba(184,146,74,.15);margin-top:4px}
+.fn a{font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.18)}
+.fcp{font-size:7px;letter-spacing:.1em;color:rgba(255,255,255,.11)}
+.fv{font-size:6px;color:rgba(184,146,74,.14);margin-top:4px}
 </style>
 </head>
 <body>
@@ -149,7 +248,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   <div class="nav-burger"><span></span><span></span></div>
 </nav>
 
-<!-- HERO — subtle, video/image bg -->
+<!-- HERO -->
 <div class="hero" id="hero">
   <div class="hero-media">
     {heroVideo && <video autoplay muted loop playsinline src={heroVideo}></video>}
@@ -164,51 +263,62 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   </div>
 </div>
 
-<!-- 3 CATEGORY SECTIONS -->
-<div class="cat-sections">
+<!-- 3 FULL-BLEED CATEGORY SECTIONS -->
+<div class="cat-wrap">
 
   <a href="https://curatedandcobkk.com/product-category/berwick-welted-loafers/" class="cat-sec loafer">
-    <div class="cat-sec-bg">
-      <div class="cat-sec-bg-inner">
-        <svg class="cat-sec-svg" viewBox="0 0 560 280" fill="none"><path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/><rect x="224" y="80" width="112" height="24" rx="12" fill="#C9A96E" opacity="0.4"/></svg>
-      </div>
+    <div class="cat-bg-art">
+      <svg viewBox="0 0 560 280" fill="none">
+        <path d="M48 198C82 138 164 106 254 100C310 96 366 104 412 124C458 144 500 172 514 190C526 204 520 220 500 226C462 237 380 240 272 238C182 236 100 232 68 222C48 216 36 212 48 198Z" fill="#C9A96E"/>
+        <rect x="224" y="80" width="112" height="24" rx="12" fill="#C9A96E" opacity="0.5"/>
+        <rect x="248" y="64" width="64" height="16" rx="8" fill="#C9A96E" opacity="0.3"/>
+      </svg>
     </div>
-    <div class="cat-sec-overlay"></div>
-    <div class="cat-sec-body">
-      <div class="cat-sec-tag">Berwick 1707</div>
-      <div class="cat-sec-name">Welted Loafers</div>
-      <div class="cat-sec-desc">Penny, horsebit & tassel — Goodyear welted in Almansa</div>
-      <div class="cat-sec-link">Shop Now</div>
+    <div class="cat-overlay"></div>
+    <div class="cat-number">01</div>
+    <div class="cat-body">
+      <div class="cat-tag">Berwick 1707</div>
+      <div class="cat-name">Welted<br/>Loafers</div>
+      <div class="cat-desc">Penny, horsebit & tassel — Goodyear welted in Almansa, Spain since 1707</div>
+      <div class="cat-cta">Shop the Collection</div>
     </div>
   </a>
 
   <a href="https://curatedandcobkk.com/product-category/oxford-shoes/" class="cat-sec oxford">
-    <div class="cat-sec-bg">
-      <div class="cat-sec-bg-inner">
-        <svg class="cat-sec-svg" viewBox="0 0 560 280" fill="none"><path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/><path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="6" stroke-linecap="round" fill="none"/></svg>
-      </div>
+    <div class="cat-bg-art">
+      <svg viewBox="0 0 560 280" fill="none">
+        <path d="M52 200C86 140 168 108 258 102C314 98 368 106 414 126C460 146 500 174 514 192C524 206 518 222 498 228C460 239 376 242 268 240C178 238 96 234 64 224C44 218 40 214 52 200Z" fill="#C9A96E"/>
+        <path d="M258 102C262 76 266 52 270 38C274 24 282 17 292 21C304 26 306 46 302 68" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <path d="M220 118C230 114 242 112 255 112" stroke="#C9A96E" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+        <path d="M220 128C230 124 242 122 258 122" stroke="#C9A96E" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+      </svg>
     </div>
-    <div class="cat-sec-overlay"></div>
-    <div class="cat-sec-body">
-      <div class="cat-sec-tag">Berwick 1707</div>
-      <div class="cat-sec-name">Oxford Shoes</div>
-      <div class="cat-sec-desc">Shell cordovan & box calf — formal shoes built to last</div>
-      <div class="cat-sec-link">Shop Now</div>
+    <div class="cat-overlay"></div>
+    <div class="cat-number">02</div>
+    <div class="cat-body">
+      <div class="cat-tag">Berwick 1707</div>
+      <div class="cat-name">Oxford<br/>Shoes</div>
+      <div class="cat-desc">Shell cordovan & box calf — the pinnacle of formal dress shoes, built to last decades</div>
+      <div class="cat-cta">Shop the Collection</div>
     </div>
   </a>
 
   <a href="https://curatedandcobkk.com/product-category/berwick-flex-walks/" class="cat-sec flex">
-    <div class="cat-sec-bg">
-      <div class="cat-sec-bg-inner">
-        <svg class="cat-sec-svg" viewBox="0 0 560 280" fill="none"><path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/><path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
-      </div>
+    <div class="cat-bg-art">
+      <svg viewBox="0 0 560 280" fill="none">
+        <path d="M40 195C70 130 158 100 250 97C306 95 360 105 406 128C452 151 496 178 510 195C522 208 516 224 494 230C454 240 368 244 260 242C168 240 88 236 58 226C36 219 28 210 40 195Z" fill="#C9A96E"/>
+        <path d="M250 97C253 74 256 56 260 44C264 32 272 26 280 29" stroke="#C9A96E" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <circle cx="200" cy="175" r="8" fill="#C9A96E" opacity="0.2"/>
+        <circle cx="320" cy="175" r="8" fill="#C9A96E" opacity="0.2"/>
+      </svg>
     </div>
-    <div class="cat-sec-overlay"></div>
-    <div class="cat-sec-body">
-      <div class="cat-sec-tag">Berwick 1707</div>
-      <div class="cat-sec-name">Flex Walks</div>
-      <div class="cat-sec-desc">Blake-stitched comfort for the Bangkok lifestyle</div>
-      <div class="cat-sec-link">Shop Now</div>
+    <div class="cat-overlay"></div>
+    <div class="cat-number">03</div>
+    <div class="cat-body">
+      <div class="cat-tag">Berwick 1707</div>
+      <div class="cat-name">Flex<br/>Walks</div>
+      <div class="cat-desc">Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined</div>
+      <div class="cat-cta">Shop the Collection</div>
     </div>
   </a>
 
