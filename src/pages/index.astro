@@ -1,5 +1,5 @@
 ---
-const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/v1777050102/Landing_-_V_kll7wf.mp4";
+const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/q_auto,vc_auto/v1777050102/Landing_-_V_kll7wf.mp4";
 const heroImage = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg";
 const heroEyebrow = "Bangkok · Thailand";
 const heroLine1 = "Curated";
@@ -30,6 +30,7 @@ const logo = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777111636/Unti
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>Curated & Co. Bangkok</title>
 <meta name="description" content="Curated and Co. Bangkok — curator of shoemaking heritage. Berwick 1707, Carmina, Paraboot."/>
+<link rel="preload" as="video" href={heroVideo} type="video/mp4"/>
 <style>
 @font-face{font-family:'K2D';src:url('/fonts/K2D-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'K2D';src:url('/fonts/K2D-LightItalic.ttf') format('truetype');font-weight:300;font-style:italic;font-display:swap}
@@ -405,7 +406,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 <!-- HERO -->
 <div class="hero" id="hero">
   <div class="hero-media">
-    {heroVideo && <video autoplay muted loop playsinline src={heroVideo}></video>}
+    {heroVideo && <video autoplay muted loop playsinline preload="auto" src={heroVideo} style="opacity:0;transition:opacity .6s ease" oncanplay="this.style.opacity=1"></video>}
     {!heroVideo && heroImage && <img src={heroImage} alt="Curated & Co."/>}
   </div>
   <div class="hero-overlay"></div>
