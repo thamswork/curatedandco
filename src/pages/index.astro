@@ -233,42 +233,81 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 /* DESKTOP */
 @media(min-width:768px){
-  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px}
+  /* NAV */
+  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:56px;padding-right:56px}
   .nav-logo img{height:44px}
   .nav-shop{display:block}
   .nav-burger{display:none}
-  .hero-body{padding:0 72px calc(80px + env(safe-area-inset-bottom));max-width:600px}
-  .hero-title{font-size:clamp(52px,6vw,80px)}
-  .cats{flex-direction:row;height:90vh;min-height:560px}
+
+  /* HERO */
+  .hero-body{padding:0 80px calc(88px + env(safe-area-inset-bottom));max-width:640px}
+  .hero-title{font-size:clamp(48px,5.5vw,72px)}
+  .hero-sub{font-size:12px;max-width:340px}
+
+  /* CATEGORY — 3 side by side */
+  .cats{flex-direction:row;height:88vh;min-height:580px}
   .cat-card{width:33.333%;height:100%;border-top:none;border-left:1px solid rgba(255,255,255,.1)}
   .cat-card:first-child{border-left:none}
-  .cat-name{font-size:clamp(36px,4vw,52px)}
-  .prods{padding:80px 0 96px}
-  .sec-hd{padding:0 48px;margin-bottom:48px}
+  .cat-name{font-size:clamp(34px,3.5vw,48px)}
+  .cat-content{padding:0 32px 40px}
+  .cat-desc{font-size:11px;max-width:200px}
+
+  /* PRODUCTS — 4 col */
+  .prods{padding:88px 0 96px}
+  .sec-hd{padding:0 56px;margin-bottom:48px}
   .prod-grid{grid-template-columns:repeat(4,1fr)}
-  .looks-hd{padding:64px 48px 36px}
-  .looks-item{width:40vw;max-width:420px}
-  .looks-footer{padding:24px 48px 64px}
-  .journal-sec .sec-hd{padding:0 48px}
-  .journal-item{padding-bottom:72px;margin-bottom:72px}
-  .journal-img-wrap{aspect-ratio:21/9}
-  .journal-body{padding:0 48px}
-  .journal-title{font-size:clamp(28px,3vw,42px)}
-  .journal-excerpt{font-size:13px;max-width:640px}
-  .journal-more{padding:40px 48px 0}
-  /* journal stays vertical on desktop — editorial style */
+  .prod-info{padding:14px 16px 20px}
+  .prod-name{font-size:14px}
 
+  /* LOOKS */
+  .looks-hd{padding:72px 56px 40px}
+  .looks-item{width:38vw;max-width:480px}
+  .looks-footer{padding:24px 56px 64px}
 
+  /* JOURNAL — 3 col grid on desktop, not full width stacked */
+  .journal-sec{padding:88px 0 96px}
+  .journal-sec .sec-hd{padding:0 56px;margin-bottom:52px}
+  .journal-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+    padding:0 56px;
+  }
+  .journal-item{
+    border-bottom:none;
+    padding-bottom:0;
+    margin-bottom:0;
+    display:flex;
+    flex-direction:column;
+    border-right:1px solid rgba(0,0,0,.07);
+    padding-right:32px;
+  }
+  .journal-item:last-child{border-right:none;padding-right:0}
+  .journal-img-wrap{aspect-ratio:4/3;margin-bottom:20px}
+  .journal-body{padding:0}
+  .journal-title{font-size:18px;font-weight:400;line-height:1.3}
+  .journal-excerpt{font-size:11px;-webkit-line-clamp:3}
+  .journal-more{padding:40px 56px 0;justify-content:flex-start}
 
-
-  .phil{padding:96px 48px;display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+  /* OUR FAVOURITE — 2 col */
+  .phil{padding:96px 56px;display:grid;grid-template-columns:1fr 1fr;gap:0 72px;align-items:start}
   .phil-rows{margin-top:0}
-  .ig-sec{padding:64px 0}
-  .ig-sec .sec-hd{padding:0 48px}
+  .phil-body{font-size:17px}
+
+  /* INSTAGRAM — 4 col */
+  .ig-sec{padding:72px 0}
+  .ig-sec .sec-hd{padding:0 56px;margin-bottom:36px}
   .ig-grid{grid-template-columns:repeat(4,1fr)}
-  .cta{padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .cta-btns{flex-direction:row}
-  footer{padding:64px 48px calc(48px + env(safe-area-inset-bottom))}
+  .ig-follow{padding:28px 56px}
+
+  /* CTA */
+  .cta{padding:88px 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .cta-btns{flex-direction:row;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{padding:64px 56px calc(52px + env(safe-area-inset-bottom))}
+  .fb2{gap:24px}
+  .fn{gap:20px}
 }
 </style>
 </head>
