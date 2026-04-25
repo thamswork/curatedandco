@@ -19,7 +19,7 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false, hint: "Paste Cloudinary video URL" }
+              - { label: "Hero Video URL", name: "heroVideo", widget: "string", required: false }
               - { label: "Hero Image (fallback)", name: "heroImage", widget: "image", required: false }
               - { label: "Eyebrow Text", name: "heroEyebrow", widget: "string", default: "Bangkok · Thailand" }
               - { label: "Title Line 1", name: "heroLine1", widget: "string", default: "Curated" }
@@ -32,7 +32,7 @@ collections:
             name: "cat1"
             widget: "object"
             fields:
-              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
+              - { label: "Background Photo", name: "photo", widget: "image", required: false }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Welted" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Loafers" }
@@ -43,7 +43,7 @@ collections:
             name: "cat2"
             widget: "object"
             fields:
-              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
+              - { label: "Background Photo", name: "photo", widget: "image", required: false }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Oxford" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Shoes" }
@@ -54,12 +54,44 @@ collections:
             name: "cat3"
             widget: "object"
             fields:
-              - { label: "Background Photo", name: "photo", widget: "image", required: false, hint: "Upload full-bleed photo" }
+              - { label: "Background Photo", name: "photo", widget: "image", required: false }
               - { label: "Tag", name: "tag", widget: "string", default: "Berwick 1707" }
               - { label: "Name Line 1", name: "name1", widget: "string", default: "Flex" }
               - { label: "Name Line 2", name: "name2", widget: "string", default: "Walks" }
               - { label: "Description", name: "desc", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
+
+          - label: "Our Favorites Products"
+            name: "products"
+            widget: "list"
+            max: 12
+            fields:
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Brand", name: "brand", widget: "string", default: "Berwick 1707" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Note", name: "note", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
+
+          - label: "LOOKS Photos"
+            name: "looks"
+            widget: "list"
+            max: 20
+            fields:
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
+              - { label: "Link URL (optional)", name: "url", widget: "string", required: false }
+
+          - label: "Journal Posts"
+            name: "journal"
+            widget: "list"
+            max: 6
+            fields:
+              - { label: "Cover Photo", name: "photo", widget: "image", required: false }
+              - { label: "Category Tag", name: "tag", widget: "string", default: "Journal" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string", default: "https://curatedandcobkk.com/blog/" }
 
           - label: "Our Favourite Section"
             name: "favourite"
@@ -75,5 +107,6 @@ collections:
             widget: "object"
             fields:
               - { label: "Address", name: "address", widget: "string", default: "Emporium 1F, Bangkok." }
-              - { label: "Hours and Phone", name: "hours", widget: "string", default: "Daily 10:00 - 21:00 · 098-356-8388" }
+              - { label: "Hours and Phone", name: "hours", widget: "string" }
               - { label: "LINE URL", name: "lineUrl", widget: "string" }
+              - { label: "Google Maps URL", name: "mapsUrl", widget: "string", default: "https://maps.google.com/?q=Emporium+Bangkok" }

@@ -42,6 +42,113 @@
   "visit": {
     "address": "Emporium 1F, Bangkok.",
     "hours": "Daily 10:00 – 21:00 · 098-356-8388",
-    "lineUrl": "https://line.me/ti/p/curatedandcobkk"
-  }
+    "lineUrl": "https://line.me/ti/p/curatedandcobkk",
+    "mapsUrl": "https://maps.google.com/?q=Emporium+Bangkok"
+  },
+  "products": [
+    {
+      "photo": "",
+      "brand": "Berwick 1707",
+      "name": "Penny Loafer 9628",
+      "note": "Goodyear welted · Rois Cordovan",
+      "price": "฿8,800",
+      "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/"
+    },
+    {
+      "photo": "",
+      "brand": "Berwick 1707",
+      "name": "Penny Loafer 9628",
+      "note": "Goodyear welted · Vegano Melize",
+      "price": "฿8,800",
+      "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/"
+    },
+    {
+      "photo": "",
+      "brand": "Berwick 1707",
+      "name": "Penny Loafer 9628",
+      "note": "Goodyear welted · Black",
+      "price": "฿8,800",
+      "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/"
+    },
+    {
+      "photo": "",
+      "brand": "Berwick 1707",
+      "name": "Horsebit Suede",
+      "note": "Unlined · Blake stitch",
+      "price": "฿7,500",
+      "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/"
+    },
+    {
+      "photo": "",
+      "brand": "Carmina",
+      "name": "Simpson Brogue",
+      "note": "Full brogue · Double sole",
+      "price": "฿14,500",
+      "url": "https://curatedandcobkk.com/product-category/brands/carmina/"
+    },
+    {
+      "photo": "",
+      "brand": "Carmina",
+      "name": "Uetam Penny",
+      "note": "Unlined suede · Last Uetam",
+      "price": "฿13,200",
+      "url": "https://curatedandcobkk.com/product-category/brands/carmina/"
+    },
+    {
+      "photo": "",
+      "brand": "Paraboot",
+      "name": "Michael Derby",
+      "note": "Norwegian welt · France",
+      "price": "฿16,500",
+      "url": "https://curatedandcobkk.com/product-category/brands/paraboot/"
+    },
+    {
+      "photo": "",
+      "brand": "Paraboot",
+      "name": "Chambord Boot",
+      "note": "Commando sole · Box calf",
+      "price": "฿18,500",
+      "url": "https://curatedandcobkk.com/product-category/brands/paraboot/"
+    }
+  ],
+  "looks": [
+    {
+      "photo": "",
+      "caption": "",
+      "url": ""
+    },
+    {
+      "photo": "",
+      "caption": "",
+      "url": ""
+    },
+    {
+      "photo": "",
+      "caption": "",
+      "url": ""
+    }
+  ],
+  "journal": [
+    {
+      "photo": "",
+      "tag": "Journal",
+      "title": "Shell Cordovan — The Finest Leather",
+      "excerpt": "Understanding why shell cordovan remains the most coveted leather in shoemaking.",
+      "url": "https://curatedandcobkk.com/blog/"
+    },
+    {
+      "photo": "",
+      "tag": "Journal",
+      "title": "Goodyear Welt vs Blake Stitch",
+      "excerpt": "A practical guide to understanding the two most important shoe construction methods.",
+      "url": "https://curatedandcobkk.com/blog/"
+    },
+    {
+      "photo": "",
+      "tag": "Journal",
+      "title": "How to Care for Your Shoes",
+      "excerpt": "Simple routines that will keep your Berwick and Carmina shoes looking their best for decades.",
+      "url": "https://curatedandcobkk.com/blog/"
+    }
+  ]
 }

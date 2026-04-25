@@ -7,6 +7,9 @@ const c2 = home.cat2 || {};
 const c3 = home.cat3 || {};
 const fav = home.favourite || {};
 const vis = home.visit || {};
+const products = home.products || [];
+const looks = home.looks || [];
+const journal = home.journal || [];
 
 let astro = fs.readFileSync('./src/pages/index.astro', 'utf8');
 const newFront = `---
@@ -21,14 +24,18 @@ const heroCtaUrl = ${JSON.stringify(h.heroCtaUrl || 'https://curatedandcobkk.com
 const cat1 = ${JSON.stringify(c1)};
 const cat2 = ${JSON.stringify(c2)};
 const cat3 = ${JSON.stringify(c3)};
+const products = ${JSON.stringify(products)};
+const looks = ${JSON.stringify(looks)};
+const journal = ${JSON.stringify(journal)};
 const favEyebrow = ${JSON.stringify(fav.eyebrow || 'Our Favourite')};
 const favH1 = ${JSON.stringify(fav.heading1 || 'Made to Last')};
 const favH2 = ${JSON.stringify(fav.heading2 || 'a Lifetime')};
 const favBody = ${JSON.stringify(fav.body || '')};
 const visitAddress = ${JSON.stringify(vis.address || 'Emporium 1F, Bangkok.')};
 const visitHours = ${JSON.stringify(vis.hours || 'Daily 10:00 – 21:00 · 098-356-8388')};
-const logo = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777111636/Untitled_design_w0ei4t.png";
 const visitLine = ${JSON.stringify(vis.lineUrl || 'https://line.me/ti/p/curatedandcobkk')};
+const visitMaps = ${JSON.stringify(vis.mapsUrl || 'https://maps.google.com/?q=Emporium+Bangkok')};
+const logo = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777111636/Untitled_design_w0ei4t.png";
 ---`;
 astro = astro.replace(/^---[\s\S]*?---/, newFront);
 fs.writeFileSync('./src/pages/index.astro', astro);
