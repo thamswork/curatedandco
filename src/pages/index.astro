@@ -268,13 +268,20 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 @media(min-width:900px){
   /* NAV DESKTOP */
-  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px;display:flex;align-items:center;justify-content:space-between}
-  .nav-logo{position:absolute;left:48px;top:50%;transform:translateY(-50%)}
+  .nav{height:calc(72px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 48px 0;display:flex;align-items:center;justify-content:space-between}
+  .nav-mobile-left,.nav-mobile-center,.nav-mobile-right{display:none}
+  .nav-desktop-left{display:flex;align-items:center;flex-shrink:0}
+  .nav-desktop-center{display:flex;align-items:center;justify-content:center;flex:1;padding:0 32px}
+  .nav-desktop-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
   .nav-logo img{height:40px}
-  .nav-left{display:flex;align-items:center;justify-content:center;flex:1}
-  .nav-burger{display:none}
-  .nav-ig{display:none}
-  .nav-icons{display:flex;position:absolute;right:48px;top:50%;transform:translateY(-50%)}
+  .nav-links{display:flex;align-items:center}
+  .nav-links a{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 16px;white-space:nowrap;transition:color .3s}
+  .nav.h .nav-links a{color:rgba(255,255,255,.75)}
+  .nav.l .nav-links a{color:var(--green)}
+  .nav-icon-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px}
+  .nav-icon-btn svg{width:18px;height:18px;fill:none;transition:stroke .4s}
+  .nav.h .nav-icon-btn svg{stroke:#fff}
+  .nav.l .nav-icon-btn svg{stroke:var(--green)}
 
   /* HERO */
   .hero-body{padding:0 80px calc(88px + env(safe-area-inset-bottom));max-width:640px}
