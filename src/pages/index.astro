@@ -63,7 +63,7 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 
 /* Desktop center nav */
 .nav-links{display:none;align-items:center;gap:0;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 14px;white-space:nowrap;transition:color .3s}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:0 18px;white-space:nowrap;transition:color .3s}
 .nav.h .nav-links a{color:rgba(255,255,255,.65)}
 .nav.l .nav-links a{color:var(--green)}
 .nav.h .nav-links a:hover{color:#fff}
@@ -135,10 +135,10 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 .cat-grad{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.45) 30%,rgba(0,0,0,.1) 65%,rgba(0,0,0,0) 100%)}
 .cat-ghost-num{position:absolute;top:28px;right:16px;font-size:clamp(80px,26vw,140px);font-weight:300;color:rgba(255,255,255,.03);line-height:1;z-index:3;user-select:none}
 .cat-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24px calc(48px + env(safe-area-inset-bottom))}
-.cat-tag{font-size:7px;letter-spacing:.55em;text-transform:uppercase;color:rgba(184,146,74,.45);margin-bottom:14px;display:block;overflow:hidden}
+.cat-tag{font-size:8px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(184,146,74,.6);margin-bottom:8px;display:block;overflow:hidden}
 .cat-tag-inner{display:block;transform:translateY(100%);opacity:0;transition:transform .9s var(--ease),opacity .9s var(--ease)}
 .cat-name-wrap{overflow:hidden;margin-bottom:12px}
-.cat-name{font-size:clamp(44px,13vw,66px);font-weight:300;color:#fff;line-height:.9;display:block;transform:translateY(105%);opacity:0;transition:transform 1s var(--ease) .08s,opacity 1s var(--ease) .08s}
+.cat-name{font-size:clamp(52px,15vw,80px);font-weight:300;color:#fff;line-height:.88;display:block;transform:translateY(105%);opacity:0;transition:transform 1s var(--ease) .08s,opacity 1s var(--ease) .08s}
 .cat-desc{font-size:10px;color:rgba(255,255,255,.32);line-height:1.75;margin-bottom:22px;max-width:260px;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease) .18s,transform .9s var(--ease) .18s}
 .cat-link{display:inline-flex;align-items:center;gap:12px;font-size:7px;letter-spacing:.48em;text-transform:uppercase;color:rgba(255,255,255,.45);opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease) .28s,transform .9s var(--ease) .28s}
 .cat-link-line{width:0;height:1px;background:rgba(255,255,255,.35);display:block;transition:width .7s var(--ease) .6s}
@@ -412,14 +412,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     {!heroVideo && heroImage && <img src={heroImage} alt="Curated & Co."/>}
   </div>
   <div class="hero-overlay"></div>
-  <div class="hero-body">
-    <div class="hero-eyebrow">{heroEyebrow}</div>
-    <div class="hero-title-wrap">
-      <div class="hero-title">{heroLine1}<br/><em>{heroLine2}</em></div>
-    </div>
-    <div class="hero-sub">{heroSub}</div>
-    <a href={heroCtaUrl} class="hero-cta">{heroCta}</a>
-  </div>
+
 </div>
 
 <!-- 3 CATEGORY CARDS -->
