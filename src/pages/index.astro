@@ -132,9 +132,9 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 .cat-card:nth-child(2) .cat-art svg{animation-delay:-6s}
 .cat-card:nth-child(3) .cat-art svg{animation-delay:-11s}
 @keyframes breathe{0%{transform:scale(1)}100%{transform:scale(1.09) translateY(-18px)}}
-.cat-grad{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.45) 30%,rgba(0,0,0,.1) 65%,rgba(0,0,0,0) 100%)}
+.cat-grad{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 35%,rgba(0,0,0,.15) 60%,rgba(0,0,0,0) 100%)}
 .cat-ghost-num{position:absolute;top:28px;right:16px;font-size:clamp(80px,26vw,140px);font-weight:300;color:rgba(255,255,255,.03);line-height:1;z-index:3;user-select:none}
-.cat-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 32px calc(52px + env(safe-area-inset-bottom))}
+.cat-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 32px calc(52px + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:flex-end}
 .cat-tag{font-size:8px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:rgba(184,146,74,.65);margin-bottom:12px;display:block;overflow:hidden}
 .cat-tag-inner{display:block;transform:translateY(100%);opacity:0;transition:transform .9s var(--ease),opacity .9s var(--ease)}
 .cat-name-wrap{overflow:hidden;margin-bottom:12px}
@@ -286,7 +286,7 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   .cat-card{width:33.333%;height:100%;border-top:none;border-left:1px solid rgba(255,255,255,.1)}
   .cat-card:first-child{border-left:none}
   .cat-name{font-size:clamp(40px,4vw,56px)}
-  .cat-content{padding:0 36px 44px}
+  .cat-content{padding:0 36px 44px;display:flex;flex-direction:column;justify-content:flex-end}
   .cat-desc{font-size:11px;max-width:200px}
 
   /* PRODUCTS — 4 col */
