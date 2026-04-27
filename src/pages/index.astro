@@ -63,7 +63,7 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 .nav.l .nav-logo img{filter:none}
 
 /* Desktop center nav */
-.nav-links{display:none;align-items:center;gap:0;position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
+.nav-links{display:none;align-items:center;gap:0}
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:0 18px;white-space:nowrap;transition:color .3s}
 .nav.h .nav-links a{color:rgba(255,255,255,.65)}
 .nav.l .nav-links a{color:var(--green)}
@@ -275,18 +275,19 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 
 /* DESKTOP */
 @media(min-width:1024px){
-  .nav-links{display:flex;pointer-events:all}
+  .nav-links{display:flex;position:absolute;left:50%;transform:translateX(-50%)}
   .nav-icons{display:flex}
   .nav-right{display:none}
 }
 @media(min-width:768px){
   /* NAV DESKTOP */
-  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px;grid-template-columns:1fr auto 1fr}
+  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{position:absolute;left:48px;top:50%;transform:translateY(-50%)}
   .nav-logo img{height:40px}
+  .nav-left{display:flex;align-items:center;justify-content:center;flex:1}
   .nav-burger{display:none}
   .nav-ig{display:none}
-  .nav-icons{display:flex}
-  .nav-left{justify-content:flex-start}
+  .nav-icons{display:flex;position:absolute;right:48px;top:50%;transform:translateY(-50%)}
 
   /* HERO */
   .hero-body{padding:0 80px calc(88px + env(safe-area-inset-bottom));max-width:640px}
