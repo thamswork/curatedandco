@@ -1,5 +1,5 @@
 ---
-const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/q_auto:best,vc_h264,f_mp4,br_2m/v1777050102/Landing_-_V_kll7wf.mp4";
+const heroVideo = "https://res.cloudinary.com/dynjnftnu/video/upload/v1777272540/Landing_no_sound_-_under_100mb_id2g8e.mp4";
 const heroImage = "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg";
 const heroEyebrow = "Bangkok · Thailand";
 const heroLine1 = "Curated";
@@ -11,7 +11,7 @@ const cat1 = {"tag":"Berwick 1707","name1":"Welted","name2":"Loafers","desc":"Pe
 const cat2 = {"tag":"Berwick 1707","name1":"Oxford","name2":"Shoes","desc":"Shell cordovan & box calf — the pinnacle of formal dress, built to last decades","url":"https://curatedandcobkk.com/product-category/oxford-shoes/","photo":"https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg"};
 const cat3 = {"tag":"Berwick 1707","name1":"Flex","name2":"Walks","desc":"Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined","url":"https://curatedandcobkk.com/product-category/berwick-flex-walks/","photo":"https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg"};
 const products = [{"photo":"","brand":"Berwick 1707","name":"Penny Loafer 9628","note":"Goodyear welted · Rois Cordovan","price":"฿8,800","url":"https://curatedandcobkk.com/product-category/berwick-welted-loafers/"},{"photo":"","brand":"Berwick 1707","name":"Penny Loafer 9628","note":"Goodyear welted · Vegano Melize","price":"฿8,800","url":"https://curatedandcobkk.com/product-category/berwick-welted-loafers/"},{"photo":"","brand":"Berwick 1707","name":"Penny Loafer 9628","note":"Goodyear welted · Black","price":"฿8,800","url":"https://curatedandcobkk.com/product-category/berwick-welted-loafers/"},{"photo":"","brand":"Berwick 1707","name":"Horsebit Suede","note":"Unlined · Blake stitch","price":"฿7,500","url":"https://curatedandcobkk.com/product-category/berwick-welted-loafers/"},{"photo":"","brand":"Carmina","name":"Simpson Brogue","note":"Full brogue · Double sole","price":"฿14,500","url":"https://curatedandcobkk.com/product-category/brands/carmina/"},{"photo":"","brand":"Carmina","name":"Uetam Penny","note":"Unlined suede · Last Uetam","price":"฿13,200","url":"https://curatedandcobkk.com/product-category/brands/carmina/"},{"photo":"","brand":"Paraboot","name":"Michael Derby","note":"Norwegian welt · France","price":"฿16,500","url":"https://curatedandcobkk.com/product-category/brands/paraboot/"},{"photo":"","brand":"Paraboot","name":"Chambord Boot","note":"Commando sole · Box calf","price":"฿18,500","url":"https://curatedandcobkk.com/product-category/brands/paraboot/"}];
-const looks = [{"photo":"","caption":"","url":""},{"photo":"","caption":"","url":""},{"photo":"","caption":"","url":""}];
+const looks = [{"photo":"https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg","caption":"","url":""},{"photo":"https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg","caption":"","url":""},{"photo":"https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg","caption":"","url":""}];
 const journal = [{"photo":"","tag":"Journal","title":"Shell Cordovan — The Finest Leather","excerpt":"Understanding why shell cordovan remains the most coveted leather in shoemaking.","url":"https://curatedandcobkk.com/blog/"},{"photo":"","tag":"Journal","title":"Goodyear Welt vs Blake Stitch","excerpt":"A practical guide to understanding the two most important shoe construction methods.","url":"https://curatedandcobkk.com/blog/"},{"photo":"","tag":"Journal","title":"How to Care for Your Shoes","excerpt":"Simple routines that will keep your Berwick and Carmina shoes looking their best for decades.","url":"https://curatedandcobkk.com/blog/"}];
 const favEyebrow = "Our Favourite";
 const favH1 = "Made to Last";
@@ -134,13 +134,13 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 @keyframes breathe{0%{transform:scale(1)}100%{transform:scale(1.09) translateY(-18px)}}
 .cat-grad{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.45) 30%,rgba(0,0,0,.1) 65%,rgba(0,0,0,0) 100%)}
 .cat-ghost-num{position:absolute;top:28px;right:16px;font-size:clamp(80px,26vw,140px);font-weight:300;color:rgba(255,255,255,.03);line-height:1;z-index:3;user-select:none}
-.cat-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 24px calc(48px + env(safe-area-inset-bottom))}
-.cat-tag{font-size:8px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(184,146,74,.6);margin-bottom:8px;display:block;overflow:hidden}
+.cat-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 32px calc(52px + env(safe-area-inset-bottom))}
+.cat-tag{font-size:8px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:rgba(184,146,74,.65);margin-bottom:12px;display:block;overflow:hidden}
 .cat-tag-inner{display:block;transform:translateY(100%);opacity:0;transition:transform .9s var(--ease),opacity .9s var(--ease)}
 .cat-name-wrap{overflow:hidden;margin-bottom:12px}
-.cat-name{font-size:clamp(52px,15vw,80px);font-weight:300;color:#fff;line-height:.88;display:block;transform:translateY(105%);opacity:0;transition:transform 1s var(--ease) .08s,opacity 1s var(--ease) .08s}
-.cat-desc{font-size:10px;color:rgba(255,255,255,.32);line-height:1.75;margin-bottom:22px;max-width:260px;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease) .18s,transform .9s var(--ease) .18s}
-.cat-link{display:inline-flex;align-items:center;gap:12px;font-size:7px;letter-spacing:.48em;text-transform:uppercase;color:rgba(255,255,255,.45);opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease) .28s,transform .9s var(--ease) .28s}
+.cat-name{font-size:clamp(44px,5vw,64px);font-weight:300;color:#fff;line-height:.92;letter-spacing:-.01em;display:block;transform:translateY(105%);opacity:0;transition:transform 1s var(--ease) .08s,opacity 1s var(--ease) .08s}
+.cat-desc{font-size:11px;font-weight:300;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:24px;max-width:280px;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease) .18s,transform .9s var(--ease) .18s}
+.cat-link{display:inline-flex;align-items:center;gap:12px;font-size:8px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease) .28s,transform .9s var(--ease) .28s}
 .cat-link-line{width:0;height:1px;background:rgba(255,255,255,.35);display:block;transition:width .7s var(--ease) .6s}
 .cat-card.visible .cat-tag-inner{transform:none;opacity:1}
 .cat-card.visible .cat-name{transform:none;opacity:1}
@@ -285,8 +285,8 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
   .cats{flex-direction:row;height:88vh;min-height:580px}
   .cat-card{width:33.333%;height:100%;border-top:none;border-left:1px solid rgba(255,255,255,.1)}
   .cat-card:first-child{border-left:none}
-  .cat-name{font-size:clamp(34px,3.5vw,48px)}
-  .cat-content{padding:0 32px 40px}
+  .cat-name{font-size:clamp(40px,4vw,56px)}
+  .cat-content{padding:0 36px 44px}
   .cat-desc{font-size:11px;max-width:200px}
 
   /* PRODUCTS — 4 col */
