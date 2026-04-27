@@ -57,7 +57,8 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 .nav{position:fixed;inset:0 0 auto 0;z-index:300;height:calc(64px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 20px 0;display:flex;align-items:center;justify-content:space-between;transition:background .5s var(--ease),border-color .5s var(--ease)}
 .nav.h{background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent)}
 .nav.l{background:#fff}
-.nav-logo img{height:36px;width:auto;transition:filter .4s}
+.nav-logo{display:flex;align-items:center;justify-content:center;gap:8px}
+.nav-logo img{height:32px;width:auto;transition:filter .4s}
 .nav.h .nav-logo img{filter:brightness(0) invert(1)}
 .nav.l .nav-logo img{filter:none}
 
@@ -79,14 +80,22 @@ body{background:#000;color:var(--ink);font-family:var(--f);font-weight:300;overf
 
 /* Mobile right */
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-burger{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;width:44px;height:44px;cursor:pointer;position:relative;z-index:400}
-.nav-burger span{display:block;width:22px;height:1px;transition:all .4s var(--ease);transform-origin:center}
-.nav-burger span:nth-child(2){width:14px;align-self:flex-end}
+.nav-left{display:flex;align-items:center;justify-content:flex-start}
+.nav-right{display:flex;align-items:center;justify-content:flex-end}
+.nav-burger{display:flex;flex-direction:column;gap:5px;align-items:flex-start;justify-content:center;width:44px;height:44px;cursor:pointer;position:relative;z-index:400}
+.nav-burger span{display:block;height:1px;transition:all .4s var(--ease);transform-origin:center}
+.nav-burger span:nth-child(1){width:22px}
+.nav-burger span:nth-child(2){width:22px}
+.nav-burger span:nth-child(3){width:14px}
 .nav.h .nav-burger span{background:rgba(255,255,255,.8)}
 .nav.l .nav-burger span{background:var(--green)}
 .nav-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);background:var(--ink)!important}
 .nav-burger.open span:nth-child(2){opacity:0;width:0}
-.nav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background:var(--ink)!important}
+.nav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:22px;background:var(--ink)!important}
+.nav-ig{display:flex;align-items:center;justify-content:flex-end;width:44px;height:44px}
+.nav-ig svg{width:22px;height:22px;transition:stroke .4s}
+.nav.h .nav-ig svg{stroke:rgba(255,255,255,.85);fill:none}
+.nav.l .nav-ig svg{stroke:var(--green);fill:none}
 
 /* MOBILE MENU DRAWER */
 .nav-drawer{position:fixed;inset:0;z-index:350;pointer-events:none}
@@ -272,9 +281,12 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 }
 @media(min-width:768px){
   /* NAV DESKTOP */
-  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px}
+  .nav{height:calc(72px + env(safe-area-inset-top));padding-left:48px;padding-right:48px;grid-template-columns:1fr auto 1fr}
   .nav-logo img{height:40px}
-  .nav-right{display:none}
+  .nav-burger{display:none}
+  .nav-ig{display:none}
+  .nav-icons{display:flex}
+  .nav-left{justify-content:flex-start}
 
   /* HERO */
   .hero-body{padding:0 80px calc(88px + env(safe-area-inset-bottom));max-width:640px}
@@ -353,33 +365,40 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
 <body>
 
 <nav class="nav h" id="nav">
+  <!-- Mobile left: burger | Desktop hidden -->
+  <div class="nav-left">
+    <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+    <!-- Desktop center links -->
+    <div class="nav-links">
+      <a href="https://curatedandcobkk.com/product-category/brands/">Brands</a>
+      <a href="https://curatedandcobkk.com/shop/">Shop</a>
+      <a href="https://curatedandcobkk.com/product-category/accessories/">Accessories</a>
+      <a href="https://curatedandcobkk.com/blog/">Journal</a>
+      <a href="https://curatedandcobkk.com/#looks">Looks</a>
+      <a href="https://curatedandcobkk.com/#store">Store</a>
+    </div>
+  </div>
+  <!-- Center: logo always -->
   <a href="https://curatedandcobkk.com" class="nav-logo">
     <img src={logo} alt="Curated & Co."/>
   </a>
-  <!-- Desktop center links -->
-  <div class="nav-links">
-    <a href="https://curatedandcobkk.com/product-category/brands/">Brands</a>
-    <a href="https://curatedandcobkk.com/shop/">Shop</a>
-    <a href="https://curatedandcobkk.com/product-category/accessories/">Accessories</a>
-    <a href="https://curatedandcobkk.com/blog/">Journal</a>
-    <a href="https://curatedandcobkk.com/#looks">Looks</a>
-    <a href="https://curatedandcobkk.com/#store">Store</a>
-  </div>
-  <!-- Desktop right icons -->
-  <div class="nav-icons">
-    <a href="https://curatedandcobkk.com/?s=" aria-label="Search">
-      <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
-    </a>
-    <a href="https://curatedandcobkk.com/cart/" aria-label="Cart">
-      <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-    </a>
-    <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener" aria-label="Instagram">
+  <!-- Right: instagram mobile | icons desktop -->
+  <div class="nav-right">
+    <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram">
       <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
     </a>
-  </div>
-  <!-- Mobile right -->
-  <div class="nav-right">
-    <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+    <!-- Desktop right icons -->
+    <div class="nav-icons">
+      <a href="https://curatedandcobkk.com/?s=" aria-label="Search">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21" stroke-linecap="round"/></svg>
+      </a>
+      <a href="https://curatedandcobkk.com/cart/" aria-label="Cart">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </a>
+      <a href="https://www.instagram.com/curatedandcobkk/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -428,7 +447,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     <div class="cat-content">
       <span class="cat-tag"><span class="cat-tag-inner">{cat1.tag}</span></span>
       <div class="cat-name-wrap"><span class="cat-name">{cat1.name1}<br/>{cat1.name2}</span></div>
-      <div class="cat-desc">{cat1.desc}</div>
       <div class="cat-link">Shop the Collection<span class="cat-link-line"></span></div>
     </div>
   </a>
@@ -440,7 +458,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     <div class="cat-content">
       <span class="cat-tag"><span class="cat-tag-inner">{cat2.tag}</span></span>
       <div class="cat-name-wrap"><span class="cat-name">{cat2.name1}<br/>{cat2.name2}</span></div>
-      <div class="cat-desc">{cat2.desc}</div>
       <div class="cat-link">Shop the Collection<span class="cat-link-line"></span></div>
     </div>
   </a>
@@ -452,7 +469,6 @@ footer{background:var(--green);padding:48px 24px calc(40px + env(safe-area-inset
     <div class="cat-content">
       <span class="cat-tag"><span class="cat-tag-inner">{cat3.tag}</span></span>
       <div class="cat-name-wrap"><span class="cat-name">{cat3.name1}<br/>{cat3.name2}</span></div>
-      <div class="cat-desc">{cat3.desc}</div>
       <div class="cat-link">Shop the Collection<span class="cat-link-line"></span></div>
     </div>
   </a>
