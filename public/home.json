@@ -1,50 +1,4 @@
 {
-  "hero": {
-    "heroVideo": "https://res.cloudinary.com/dynjnftnu/video/upload/q_auto:best,vc_h264,f_mp4,br_2m/v1777050102/Landing_-_V_kll7wf.mp4",
-    "heroImage": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg",
-    "heroEyebrow": "Bangkok · Thailand",
-    "heroLine1": "Curated",
-    "heroLine2": "& Co.",
-    "heroSub": "A curated edit of Europe's finest shoemaking — for those who know.",
-    "heroCta": "Discover All",
-    "heroCtaUrl": "https://curatedandcobkk.com"
-  },
-  "cat1": {
-    "tag": "Berwick 1707",
-    "name1": "Welted",
-    "name2": "Loafers",
-    "desc": "Penny, horsebit & tassel — Goodyear welted in Almansa, Spain since 1707",
-    "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/",
-    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049828/Loafers_hcsamd.jpg"
-  },
-  "cat2": {
-    "tag": "Berwick 1707",
-    "name1": "Oxford",
-    "name2": "Shoes",
-    "desc": "Shell cordovan & box calf — the pinnacle of formal dress, built to last decades",
-    "url": "https://curatedandcobkk.com/product-category/oxford-shoes/",
-    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg"
-  },
-  "cat3": {
-    "tag": "Berwick 1707",
-    "name1": "Flex",
-    "name2": "Walks",
-    "desc": "Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined",
-    "url": "https://curatedandcobkk.com/product-category/berwick-flex-walks/",
-    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg"
-  },
-  "favourite": {
-    "eyebrow": "Our Favourite",
-    "heading1": "Made to Last",
-    "heading2": "a Lifetime",
-    "body": "Berwick 1707 represents the pinnacle of Spanish shoemaking tradition. Every pair is crafted by hand at the Berwick artisan floor in Almansa, using the finest leathers and time-honoured Goodyear welt construction."
-  },
-  "visit": {
-    "address": "Emporium 1F, Bangkok.",
-    "hours": "Daily 10:00 – 21:00 · 098-356-8388",
-    "lineUrl": "https://line.me/ti/p/curatedandcobkk",
-    "mapsUrl": "https://maps.google.com/?q=Emporium+Bangkok"
-  },
   "products": [
     {
       "photo": "",
@@ -111,19 +65,31 @@
       "url": "https://curatedandcobkk.com/product-category/brands/paraboot/"
     }
   ],
+  "favourite": {
+    "eyebrow": "Our Favourite",
+    "heading1": "Made to Last",
+    "heading2": "a Lifetime",
+    "body": "Berwick 1707 represents the pinnacle of Spanish shoemaking tradition. Every pair is crafted by hand at the Berwick artisan floor in Almansa, using the finest leathers and time-honoured Goodyear welt construction."
+  },
+  "visit": {
+    "address": "Emporium 1F, Bangkok.",
+    "hours": "Daily 10:00 – 21:00 · 098-356-8388",
+    "lineUrl": "https://line.me/ti/p/curatedandcobkk",
+    "mapsUrl": "https://maps.google.com/?q=Emporium+Bangkok"
+  },
   "looks": [
     {
-      "photo": "",
+      "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg",
       "caption": "",
       "url": ""
     },
     {
-      "photo": "",
+      "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg",
       "caption": "",
       "url": ""
     },
     {
-      "photo": "",
+      "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg",
       "caption": "",
       "url": ""
     }
@@ -150,5 +116,39 @@
       "excerpt": "Simple routines that will keep your Berwick and Carmina shoes looking their best for decades.",
       "url": "https://curatedandcobkk.com/blog/"
     }
-  ]
+  ],
+  "hero": {
+    "heroVideo": "https://res.cloudinary.com/dynjnftnu/video/upload/v1777272540/Landing_no_sound_-_under_100mb_id2g8e.mp4",
+    "heroImage": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg",
+    "heroEyebrow": "Bangkok · Thailand",
+    "heroLine1": "Curated",
+    "heroLine2": "& Co.",
+    "heroSub": "A curated edit of Europe's finest shoemaking — for those who know.",
+    "heroCta": "Discover All",
+    "heroCtaUrl": "https://curatedandcobkk.com"
+  },
+  "cat1": {
+    "tag": "Berwick 1707",
+    "name1": "Welted",
+    "name2": "Loafers",
+    "desc": "Penny, horsebit & tassel — Goodyear welted in Almansa, Spain since 1707",
+    "url": "https://curatedandcobkk.com/product-category/berwick-welted-loafers/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049828/Loafers_hcsamd.jpg"
+  },
+  "cat2": {
+    "tag": "Berwick 1707",
+    "name1": "Oxford",
+    "name2": "Shoes",
+    "desc": "Shell cordovan & box calf — the pinnacle of formal dress, built to last decades",
+    "url": "https://curatedandcobkk.com/product-category/oxford-shoes/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049840/Oxfords_hkfvai.jpg"
+  },
+  "cat3": {
+    "tag": "Berwick 1707",
+    "name1": "Flex",
+    "name2": "Walks",
+    "desc": "Blake-stitched comfort for the Bangkok lifestyle — lighter, more flexible, just as refined",
+    "url": "https://curatedandcobkk.com/product-category/berwick-flex-walks/",
+    "photo": "https://res.cloudinary.com/dynjnftnu/image/upload/v1777049918/Flex_Walk_Medium_mm3xlh.jpg"
+  }
 }
